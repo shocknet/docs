@@ -1,0 +1,12 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+    max-width: 100%; /* or a specific width if you prefer */
+    height: 200px; /* this ensures the aspect ratio is maintained */
+    object-fit: contain; /* this makes sure the image is scaled properly */
+}
