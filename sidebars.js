@@ -41,6 +41,18 @@ const sidebars = {
     'sanctum/intro',
     'sanctum/remote',
     ],
+  lnpub: [
+    'pub/intro',
+    'pub/umbrel',
+    ],
+  video: [
+    'video/intro',
+    'video/publish',
+    ],
+  sanctum: [
+    'sanctum/intro',
+    'sanctum/remote',
+    ],
    };
 
 export default sidebars;
