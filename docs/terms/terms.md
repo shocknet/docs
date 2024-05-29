@@ -12,11 +12,11 @@ Shock Network, Inc. is based proudly in the United States, and is bound to compl
 
 Unlawful or otherwise dangerous use of our services will be terminated without warning or recompense, and referred to law enforcement if appropriate. This includes but is not limited to the uploading of criminally vile content.
 
-Denial of Service attacks either on or from our infrastructure will not be tolerated.
+Denial of Service attacks, either on or from our infrastructure, will not be tolerated.
 
 Copyright claimants should send applicable evidence to any of our contact methods for prompt assistance.
 
-Bootstrap modes are provided as a convenience for procuring cloud services. Refund and change limits are imposed to prevent exploitation by those looking to circumvent US Law. Refund or change withdrawls to 3rd parties are prohibited.
+Bootstrap modes are provided as a convenience for procuring cloud services. Refund and change limits are imposed to prevent exploitation by those looking to circumvent US Law. Refund or change withdraws to 3rd parties are prohibited.
 
 ## Privacy
 
@@ -39,11 +39,11 @@ While we always give our best effort in making what we publish secure, reliable 
 
 ## Fees
 
-Fees vary from service to service and are based on market conditions for Bitcoin relative to datacenter resources. See our [Fee Table](https://shock.network/fee_table.json)
-
 We provide bandwidth, storage, compute, name-space and other cloud services frictionlessly to users of otherwise decentralized protocols. These services are accessed granularly, using micro-payments over Bitcoin’s Lightning Network.
 
-As a hosting provider, we do not keep a percentage of monetization revenues on content served from our infrastructure. Our self-custodial monetization tools are sustained through commissions for integrated services, including CDN and VM hosting.
+As a hosting provider, we do not keep a percentage of monetization revenues on content served from our infrastructure. Our self-custodial monetization tools are sustained through integrated network services, including CDN, Transcoding, Relay, and VM hosting.
+
+Fees vary from service to service and are based on market conditions for Bitcoin relative to datacenter resources. See our [Fee Table](https://docs.shock.network/fee_table.json)
 
 Refunds or withdrawals on change from service credits are subject to network enforced routing or chain fees.
 

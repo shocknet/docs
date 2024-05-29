@@ -27,6 +27,18 @@ const sidebars = {
     'wallet/intro',
     'wallet/add-node',
     ],
+  lnpub: [
+    'pub/intro',
+    'pub/umbrel',
+    ],
+  video: [
+    'video/intro',
+    'video/publish',
+    ],
+  sanctum: [
+    'sanctum/intro',
+    'sanctum/remote',
+    ],
    };
 
 export default sidebars;

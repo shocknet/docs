@@ -9,7 +9,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Shock Docs',
-  tagline: 'Guides and information for ShockWallet, Lightning.Video, Lightning.Pub',
+  tagline: 'Guides and information for ShockWallet, Lightning.Video, Lightning.Pub, and Sanctum Auth', 
   favicon: 'img/logo.png',
 
   // Set the production url of your site here
@@ -78,6 +78,24 @@ const config = {
             docId: 'wallet/intro',
             position: 'left',
             label: 'ShockWallet',
+          },
+          {
+            type: 'doc',
+            docId: 'pub/intro',
+            position: 'left',
+            label: 'Lightning.Pub',
+          },
+          {
+            type: 'doc',
+            docId: 'video/intro',
+            position: 'left',
+            label: 'Lightning.Video',
+          },
+          {
+            type: 'doc',
+            docId: 'sanctum/intro',
+            position: 'left',
+            label: 'Sanctum',
           },
           {
             href: 'https://github.com/shocknet',
