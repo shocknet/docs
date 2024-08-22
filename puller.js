@@ -24,6 +24,13 @@ function runCommand(command) {
   });
 }
 
+app.use((req, res, next) => {
+  console.log(`Received ${req.method} request for ${req.url}`);
+  console.log('Headers:', req.headers);
+  console.log('Body:', req.body);
+  next();
+});
+
 app.get('/webhook', (req, res) => {
   res.status(200).send('Webhook endpoint is active');
 });
