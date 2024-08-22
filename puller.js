@@ -24,6 +24,10 @@ function runCommand(command) {
   });
 }
 
+app.get('/webhook', (req, res) => {
+  res.status(200).send('Webhook endpoint is active');
+});
+
 app.post('/webhook', async (req, res) => {
   const signature = req.headers['x-hub-signature-256'];
   const payload = JSON.stringify(req.body);
@@ -38,19 +42,26 @@ app.post('/webhook', async (req, res) => {
   if (req.body.ref === 'refs/heads/master') {
     try {
       console.log('Docs pulling latest changes...');
-      await runCommand('git pull');
+      const pullResult = await runCommand('git pull');
+      console.log('Git pull result:', pullResult);
       
       console.log('Restarting docs service...');
-      await runCommand('sudo systemctl restart docs.service');
+      const restartResult = await runCommand('sudo systemctl restart docs.service');
+      console.log('Service restart result:', restartResult);
       
       res.status(200).send('Push processed successfully');
     } catch (error) {
       console.error('Error with docs puller:', error);
-      res.status(500).send('Error with docs puller');
+      res.status(500).send(`Error with docs puller: ${error.message}`);
     }
   } else {
     res.status(200).send('Ignoring non-master branch push');
   }
+});
+
+app.use((req, res) => {
+  console.log(`Received ${req.method} request for ${req.url}`);
+  res.status(404).send('Not found');
 });
 
 app.listen(port, '0.0.0.0', () => {
