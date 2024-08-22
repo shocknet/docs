@@ -26,7 +26,8 @@ const sidebars = {
   wallet: [
     'wallet/intro',
     'wallet/add-node',
-    ],
+    'wallet/faq',
+  ],
   lnpub: [
     'pub/intro',
     'pub/umbrel',
