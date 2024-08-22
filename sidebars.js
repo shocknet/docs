@@ -31,6 +31,7 @@ const sidebars = {
   lnpub: [
     'pub/intro',
     'pub/umbrel',
+    'pub/faq',
     ],
   video: [
     'video/intro',
