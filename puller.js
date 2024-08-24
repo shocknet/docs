@@ -46,7 +46,7 @@ app.post('/webhook', async (req, res) => {
     return res.status(401).send('Invalid signature');
   }
 
-  if (req.body.ref === 'refs/heads/master') {
+  if (req.body.ref === 'refs/heads/main') { 
     try {
       console.log('Docs pulling latest changes...');
       const pullResult = await runCommand('git pull');
@@ -62,7 +62,8 @@ app.post('/webhook', async (req, res) => {
       res.status(500).send(`Error with docs puller: ${error.message}`);
     }
   } else {
-    res.status(200).send('Ignoring non-master branch push');
+    console.log(`Ignoring push to branch: ${req.body.ref}`);
+    res.status(200).send(`Ignoring push to branch: ${req.body.ref}`);
   }
 });
 
