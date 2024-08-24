@@ -113,4 +113,4 @@ See below for our online forums, or for more private options see our [contacts](
 
 Yes, you can join the ShockWallet community through:
 - Telegram: [t.me/ShockBTC](https://t.me/ShockBTC)
-- Github Discussions: [https://github.com/shocknet/Lightning.Pub/discussions](https://github.com/shocknet/Lightning.Pub/discussions)
+- Github Discussions: [https://github.com/shocknet/wallet2/discussions](https://github.com/shocknet/wallet2/discussions)
