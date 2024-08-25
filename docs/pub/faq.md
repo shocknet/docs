@@ -14,6 +14,12 @@ You can backup and restore the db.sqlite file in the lightning_pub directory and
 
 Lightning recoveries in general are disaster recovery scenarios given the nature of channel states, we recommend a highly available system with a battery to facilitate graceful disk shutdowns. 
 
+### How do I get my seed phrase and static channel backups?
+
+If you're using the install script, Pub will automatically encrypt and store the seed phrase into the database for retrieval by the administrator user in the Pub Dashboard. It will, by default, cache this and static channel backups on the Nostr relay so that they may be retrieved in the event of a node failure.
+
+Pub can be added over an existing LND instance, but the seed phrase and static channel backups will not be automatically stored in Pub, so you will need to manually manage your backup scenario.
+
 ## Transactions
 
 ### How do I send on-chain Bitcoin?
