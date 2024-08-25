@@ -36,9 +36,11 @@ Alternatively, you may use lncli from the command line to manipulate the underly
 
 ### Does it use ECash? How does it compare on privacy?
 
-No, in our view ECash makes deceptive privacy claims while combining the worst trade-offs in combining a custodial solution with bearer credentials. 
+No, in our view ECash makes deceptive privacy claims while combining the worst trade-offs of having a custodial client-server authentication while using bearer credentials.
 
-Lightning.Pub eschews flakey mint gateways fpr a much more reliable, and equally private, direct RPC approach. Nostr keys used for connections are source ephemeral and blind to social parent keys that may be used to perform backups. Settlement to and from ECash mints works as long as those mints are actually backed by Lightning.
+Lightning.Pub eschews these crypto-theatrics and dependence on fragile mint "gateways", opting instead for a much more reliable but equally private direct RPC approach. The Nostr keys used for connections are source ephemeral and blind to their social parent keys which may be used to perform backups or publish pointers in social contexts. 
+
+Payments to and from ECash mints should still work, as long as those mints are actually backed by Lightning.
 
 Privacy equivalence aside, we do not an endorse **any** custodial Lightning services for privacy. A node operator has countless ways to deanonymize activity, and you should not use a node if you do not trust the operator with your metadata. 
 
