@@ -39,7 +39,7 @@ While we always give our best effort in making what we publish secure, reliable 
 
 ## Fees
 
-We provide bandwidth, storage, compute, name-space and other cloud services frictionlessly to users of otherwise decentralized protocols. These services are accessed granularly, using micro-payments over Bitcoin’s Lightning Network.
+We provide infrastructure services including bandwidth, storage, compute, name-space, and network utilities. These are sold in granular units and prepaid using Bitcoin, primarily via the Lightning Network.
 
 As a hosting provider, we do not keep a percentage of monetization revenues on content served from our infrastructure. Our self-custodial monetization tools are sustained through integrated network services, including CDN, Transcoding, Relay, and VM hosting.
 
