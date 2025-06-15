@@ -16,7 +16,7 @@ Denial of Service attacks, either on or from our infrastructure, will not be tol
 
 Copyright claimants should send applicable evidence to any of our contact methods for prompt assistance.
 
-Bootstrap modes are provided as a convenience for procuring cloud services. Refund and change limits are imposed to prevent exploitation by those looking to circumvent US Law. Refund or change withdraws to 3rd parties are prohibited.
+Bootstrap access is a temporary mechanism for procuring ShockNet infrastructure prior to full deployment. Credits issued in this mode are non-redeemable, non-transferable, and may only be used toward ShockNet services. They are subject to strict value limits and are permanently closed upon use, in accordance with CFPB guidance on limited-purpose prepaid funding. Attempts to circumvent these limits—via self-refunding, indirect transfers, or other workarounds—are prohibited and may result in account termination.
 
 ## Privacy
 
