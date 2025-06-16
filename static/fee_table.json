@@ -1,9 +1,9 @@
 {
-    "video_publish_sats": 615,
+    "video_publish_sats": 444,
     "routed_debit_bps": 60,
-    "cdn_gb_mo_sats": 75,
-    "disk_gb_mo_sats": 75,
+    "cdn_gb_mo_sats": 30,
+    "disk_gb_mo_sats": 30,
     "relay_pub_mo_sats": 1000,
-    "relay_wallet_mo_sats": 615,
+    "bootstrap_max_usd": 1000,
     "channel_base_sats": 25000
 }
