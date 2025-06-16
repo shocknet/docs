@@ -16,7 +16,7 @@ Denial of Service attacks, either on or from our infrastructure, will not be tol
 
 Copyright claimants should send applicable evidence to any of our contact methods for prompt assistance.
 
-Bootstrap access is a temporary mechanism for procuring ShockNet infrastructure prior to full deployment. Credits issued in this mode are non-redeemable for cash, non-transferable, and may only be used toward ShockNet services or affiliated infrastructure providers. They are subject to strict value limits and are permanently closed upon use, in accordance with CFPB guidance on limited-purpose prepaid funding. Attempts to circumvent these limits—via self-refunding, indirect transfers, or other workarounds—are prohibited and may result in account termination.
+Bootstrap access is a limited-purpose mechanism for procuring ShockNet infrastructure prior to full deployment. Credits issued in this mode are not redeemable for cash, are non-transferable between users, and may only be used toward ShockNet services or affiliated infrastructure providers. They are subject to strict value limits and are permanently closed upon use, in accordance with CFPB guidance on limited-purpose prepaid funding. These restrictions are in place to prevent abuse or exploitation of ShockNet systems to circumvent U.S. law, and violations may result in account termination or referral to law enforcement where appropriate.
 
 ## Privacy
 
