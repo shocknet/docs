@@ -1,6 +1,8 @@
 # Press
 
-https://www.accesstribe.com/post/spotlight-on-shocknet-lightning-network
+https://bitcoinmagazine.com/technical/lightning-network-in-a-class-of-its-own-at-bitcoin-2024-conference
+
+https://www.accesstribe.com/p/spotlight-on-shocknet
 
 https://medium.com/@fulgur.ventures/shocknet-a-shock-to-video-monetization-models-and-more-cdba1c875161
 
