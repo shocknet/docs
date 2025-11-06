@@ -20,8 +20,8 @@ We're also pushing the boundries of Nostr and Lightning integration with [CLINK]
 
 # Official Download
 
-[![Download for Android](https://shockwallet.app/assets/GetItOnGooglePlay_Badge_Web_color_English.png)](https://play.google.com/store/apps/details?id=app.shockwallet.my)
-[![Download for iPhone and iPad](https://cdn.shockwallet.app/app_store.png)](https://testflight.apple.com/join/soZAKZWj)
+[![Download for Android](https://github.com/design-rrr/shock-docs/blob/main/static/img/android.png?raw=true)](https://play.google.com/store/apps/details?id=app.shockwallet.my)
+[![Download for iPhone and iPad](https://github.com/design-rrr/shock-docs/blob/main/static/img/ios.png?raw=true)](https://testflight.apple.com/join/soZAKZWj)
 
 # Test It Now
 
