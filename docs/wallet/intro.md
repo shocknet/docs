@@ -17,3 +17,16 @@ As a Nostr-native wallet, ShockWallet provides [multi-device sync abilities](htt
 We're also pushing the boundries of Nostr and Lightning integration with [CLINK](https://github.com/shocknet/CLINK) that create more secure app connections with better UX than is currently available.
 
 **For new users, an optional Bootstrap node is default on mainnet allowing for the lay-away of a self-custodied channel for your own node with a partner LSP.** [*Service subject to Terms*](https://docs.shock.network/terms)
+
+
+# Try It Now
+
+## [Web Browser/PWA](https://my.ShockWallet.app) | [Download Android APK](https://github.com/shocknet/wallet2/releases/latest) | [Apple Testflight](https://testflight.apple.com/join/soZAKZWj)
+
+> [!WARNING]  
+> There will be bugs and bad UX decisions, please report any that you may find. 
+
+> [!IMPORTANT]  
+> ShockWallet and Lightning.Pub are free software. If you would like to see continued development, please show your [**support**](https://github.com/sponsors/shocknet) 😊
+>
+> <img src="https://www.gnu.org/graphics/agplv3-with-text-162x68.png" alt="License">
