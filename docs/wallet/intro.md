@@ -18,8 +18,12 @@ We're also pushing the boundries of Nostr and Lightning integration with [CLINK]
 
 **For new users, an optional Bootstrap node is default on mainnet allowing for the lay-away of a self-custodied channel for your own node with a partner LSP.** [*Service subject to Terms*](https://docs.shock.network/terms)
 
+# Official Download
 
-# Try It Now
+[![Download for Android](https://shockwallet.app/assets/GetItOnGooglePlay_Badge_Web_color_English.png)](https://play.google.com/store/apps/details?id=app.shockwallet.my)
+[![Download for iPhone and iPad](https://cdn.shockwallet.app/app_store.png)](https://testflight.apple.com/join/soZAKZWj)
+
+# Test It Now
 
 ## [Web Browser/PWA](https://my.ShockWallet.app) | [Download Android APK](https://github.com/shocknet/wallet2/releases/latest) | [Apple Testflight](https://testflight.apple.com/join/soZAKZWj)
 
