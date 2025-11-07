@@ -12,23 +12,27 @@ Pub also features a management dashboard for node runners, and allows the sendin
 
 ### Requirements
 
-Pub is a NodeJS application and can run on all major operating systems and architectures. Our automated installer script is currently limited however to Debian-based Linux distrbutions.
+Pub is a NodeJS application and can run on all major operating systems and architectures. Our automated installer script currently supports:
+- ✅ **Debian/Ubuntu**: Fully tested and supported
+- ✅ **Arch/Fedora**: Fully tested and supported
+- 🚧 **macOS**: Basic support stubbed in, but untested
 
 Below assumes a Neutrino configuration, meaning that an externally hosted Bitcoin Core is serving block information.
 
-- Pub+LND operate flawlessly on containers with as little as 2GB RAM and 1 CPU core.
+**System Requirements:**
+- **RAM**: Minimum 2GB burstable in headless containers or VPS. 4+GB recommended for full Linux Desktop OS. RAM speed matters - 2GB DDR4 performs like 4GB DDR3.
+- **Storage**: 20GB of space for compact blocks. Disk usage is typically under 5GB, but we recommend 20-40GB as LND can sometimes balloon with high usage.
+- **CPU**: 1 CPU core minimum, 2+ cores recommended for full OS
+- **Network**: 3+ Mbps download capacity for combined Nostr, Lightning, and Neutrino traffic. Initial blockheader download may take several minutes to complete on slow connections.
+- **No Networking Setup Required**: No port forwarding, Tor, or firewall configuration needed! Pub uses Nostr relays for communication.
 
-- We would recommend a full OS have at least 4GB of RAM and 2 CPU cores.
+**Perfect for Bundle Nodes**: Lightning.Pub is a complete Lightning solution. You do NOT need a full Bitcoin or other node, perfect for small devices like Raspberry Pi.
 
-- Disk usage is typically under 5GB, but we recommend 40GB as LND can sometimes balloon with high usage.
-
-- 3+ Mbps download capacity for the combined Nostr, Lightning, and Neutrino traffic. Initial blockheader download may take several minutes to complete on slow connections.
-
-Lightning state is in general heavily reliant on a reliable disk, and so we recommend redundant disks (RAID, ZFS) in a highly available system with a battery to facilitate graceful shutdowns. If that is not feasible, a laptop with an SSD drive is ideal as the built-in battery offers protection from power events. NVME drives tend to be more reliable than regular SSDs.
+Lightning state is in general heavily reliant on a reliable disk, and so we recommend redundant disks (RAID, ZFS) for critical or commercial scale systems, with a battery to facilitate graceful shutdowns. If that is not feasible, an old laptop with an SSD drive is ideal as the built-in battery offers protection from power events. NVME drives tend to be more reliable than regular SSDs.
 
 ### Configuration Options
 
-Pub has extensive configuration documented in the `env.example` file in the repository. To change your operating environment simply set the variables to your liking and restart the Pub service.
+For detailed configuration documentation including custom Nostr relays, bootstrap liquidity provider, Lightning Address domains, and all environment variables, see the [Configuration Guide](./configuration.md).
 
 ### Backups
 
@@ -48,15 +52,34 @@ Pub can be added over an existing LND instance, but the seed phrase and static c
 
 ### How do I send on-chain Bitcoin?
 
-On-chain spends are not yet supported while the software matures, you should use lncli on the underlying LND instance for the time being.
+On-chain spends and re-balancing via atomic swaps are coming very soon. Pub integrates the Boltz API standard but will point to multiple instances for the best rates and to avoid centralization. Providers slated for integration are Zeus, SwapMarket and Boltz itself.
 
 ## Lightning Network
 
 ### How do I open a Lightning channel?
 
-This feature is coming soon to the integrated Lightning.Pub Dashboard, to access the dashboard, tap the logo in ShockWallet 3 times if you are connected as the node administrator.
+**Automated Channel Opening (Recommended)**
 
-Alternatively, you may use lncli from the command line to manipulate the underlying LND instance.
+By default, Lightning.Pub includes automated channel management:
+
+1. **Bootstrap Liquidity Provider** - When enabled (default), your Pub automatically requests channel funding as a service credit when your balance reaches the threshold (~1M sats). The system compares rates from multiple LSPs (Zeus, Voltage, Flashsats) and selects the best option.
+
+2. **Automatic LSP Integration** - Once you have funds, the system handles channel requests automatically. You don't need to manually negotiate with LSPs or manage channel opens.
+
+To disable automation and manage channels manually, set `DISABLE_LIQUIDITY_PROVIDER=true` in your `.env` file. See the [Configuration Guide](./configuration.md#bootstrap-liquidity-provider) for details.
+
+**Manual Channel Opening**
+
+If you prefer to manually manage channels:
+
+1. **Via Dashboard** - Tap the logo in ShockWallet 3 times while connected as administrator to access the Lightning.Pub Dashboard. Channel management features are available there.
+
+2. **Via LND CLI** - Use `lncli` from the command line to directly manipulate the underlying LND instance:
+   ```bash
+   ~/lnd/lncli openchannel <node_pubkey> <amount_sats>
+   ```
+
+**Recommended Approach**: Keep automation enabled initially. It provides reliable liquidity with service credits. Once you're comfortable with Lightning operations, you can disable bootstrap and manage channels yourself.
 
 ### Does it use ECash? How does it compare on privacy?
 
@@ -72,9 +95,25 @@ Privacy equivalence aside, we do not endorse **any** node guest solutions for pr
 
 Pub is under active development, updates are merged several times per week most weeks and all undergo automated tests.
 
-Our installer script does not automatically update Pub instances, but you can simply re-run the installer for a graceful upgrade.
+Our installer script does not automatically update Pub instances, but you can simply re-run the installer for a graceful upgrade:
 
-Manual updates can be done with a `git pull` and `npm i`
+```bash
+wget -qO- https://deploy.lightning.pub | bash
+```
+
+The installer will only restart services if version checks deem it necessary.
+
+**Automatic Updates via Cron:**
+
+You can add the installer to your crontab to automatically update on your preferred schedule:
+
+```bash
+# Edit your crontab
+crontab -e
+
+# Add this line to run weekly on Sunday at 2 AM
+0 2 * * 0 wget -qO- https://deploy.lightning.pub | bash
+```
 
 ## Security
 
@@ -83,6 +122,50 @@ Manual updates can be done with a `git pull` and `npm i`
 Any wallet connected to the internet is a **"hot wallet"** and **should not be used to store life changing amounts of Bitcoin.** We believe Lightning.Pub to secure as any Lightning account system available, but this is a bleeding edge software in a bleeding edge ecosystem and there will be vulnerabilities.
 
 ## Troubleshooting
+
+### Installation Issues
+
+If the installation fails or services don't start properly, use these commands to diagnose:
+
+```bash
+# Check service status
+systemctl --user status lnd
+systemctl --user status lightning_pub
+
+# View logs
+journalctl --user-unit lnd -f
+journalctl --user-unit lightning_pub -f
+
+# Restart services if needed
+systemctl --user restart lnd
+systemctl --user restart lightning_pub
+
+# Retrieve admin connection string (if installation completed but you need to find it again)
+cat ~/lightning_pub/admin.connect
+
+# Reset admin access (generates new admin.connect automatically)
+rm ~/lightning_pub/admin.npub
+sleep 1
+cat ~/lightning_pub/admin.connect
+```
+
+### Common Issues
+
+#### LND wallet doesn't start
+
+The wallet will automatically unlock during the initial sync (this can take several minutes). If LND is not starting:
+
+1. Check LND logs: `journalctl --user-unit lnd -n 50`
+2. Verify LND is running: `systemctl --user status lnd`
+3. If needed, restart: `systemctl --user restart lnd`
+
+#### Admin connection string not appearing
+
+If the admin connection string isn't displayed after installation, it typically means the installation script failed. Check the service logs to diagnose the issue.
+
+#### Port conflicts
+
+If you see port conflict errors (especially port 9735), this may conflict with other Lightning implementations. The installer will attempt to find an available port automatically.
 
 ## Support
 

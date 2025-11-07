@@ -30,8 +30,10 @@ const sidebars = {
   ],
   lnpub: [
     'pub/intro',
-    'pub/umbrel',
+    'pub/configuration',
+    'pub/watchdog',
     'pub/faq',
+    'pub/umbrel',
     ],
   video: [
     'video/intro',
