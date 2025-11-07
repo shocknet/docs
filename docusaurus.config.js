@@ -104,51 +104,39 @@ const config = {
           },
         ],
       },
+
       footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Terms',
-                to: '/docs/terms',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Telegram',
-                href: 'https://t.me/shockbtc',
-              },
-              {
-                label: 'Lightning Video',
-                href: 'https://lightning.video/thecto',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/shockbtc',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/shocknet/',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Shock Network, Inc. Built with Docusaurus.`,
-      },
+  style: 'dark',
+  links: [
+    {
+      title: 'Community',
+      items: [
+        {
+          label: 'Telegram',
+          href: 'https://t.me/shockbtc',
+        },
+        {
+          label: 'Lightning Video',
+          href: 'https://lightning.video/thecto',
+        },
+        {
+          label: 'Twitter',
+          href: 'https://twitter.com/shockbtc',
+        },
+      ],
+    },
+    {
+      title: 'More',
+      items: [
+        {
+          label: 'GitHub',
+          href: 'https://github.com/shocknet/',
+        },
+      ],
+    },
+  ],
+  copyright: `Copyright © ${new Date().getFullYear()} Shock Network, Inc. Built with Docusaurus.`,
+},
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
