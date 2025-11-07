@@ -33,4 +33,4 @@ We're also pushing the boundries of Nostr and Lightning integration with [CLINK]
 > [!IMPORTANT]  
 > ShockWallet and Lightning.Pub are free software. If you would like to see continued development, please show your [**support**](https://github.com/sponsors/shocknet) 😊
 >
-> <img src="https://www.gnu.org/graphics/agplv3-with-text-162x68.png" alt="License">
+> <img src="https://www.gnu.org/graphics/agplv3-with-text-162x68.png" alt="License"/>
