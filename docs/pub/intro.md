@@ -49,11 +49,19 @@ This method installs all dependencies and creates user-level systemd services.
 
 If you encounter issues, see the [Troubleshooting section in the FAQ](./faq.md#troubleshooting).
 
+## restart service
+In case the service stop working and you are unable to connect, try to restart the service from the terminal with the following comand:
+```
+systemctl --user restart lightning_pub
+```
+
 ## Next Steps
 
 - [Configure your Pub](./configuration.md)
-- [Read the FAQ](./faq.md)
 - [Understand the Watchdog security feature](./watchdog.md)
+- [Deploy on Docker](./docker.md)
+- [Deploy on Start9](./start9.md)
 - [Deploy on Umbrel](./umbrel.md)
+- [Read the FAQ](./faq.md)
 
 For complete documentation, see the [Lightning.Pub GitHub repository](https://github.com/shocknet/Lightning.Pub).
