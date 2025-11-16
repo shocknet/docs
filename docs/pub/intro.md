@@ -30,7 +30,7 @@ By solving the networking and programmability hurdles, Pub provides Lightning wi
 - Connecting via ShockWallet is as easy as pasting an nprofile
 - Or use a link to share your nprofile with friends and family
 
-<img src="https://cdn.shockwallet.app/add_src_sm.png" height="20%" alt="Connect Wallet"> <img src="https://cdn.shockwallet.app/src_invite_sm.png" height="20%" alt="Invite Guests">
+<img src="https://cdn.shockwallet.app/add_src_sm.png" height="20%" alt="Connect Wallet" /> <img src="https://cdn.shockwallet.app/src_invite_sm.png" height="20%" alt="Invite Guests" />
 
 ## Planned Features
 
@@ -43,7 +43,7 @@ By solving the networking and programmability hurdles, Pub provides Lightning wi
 
 Dashboard Wireframe:
 
-<img src="https://shockwallet.b-cdn.net/pub_home_ss.png" alt="Pub Dashboard" width="240">
+<img src="https://shockwallet.b-cdn.net/pub_home_ss.png" alt="Pub Dashboard" width="240" />
 
 ## Installation
 
