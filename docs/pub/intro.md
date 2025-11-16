@@ -142,9 +142,11 @@ The nprofile of the node can also be used to send invitation links to guests via
 ## Next Steps
 
 - [Configure your Pub](./configuration.md)
-- [Read the FAQ](./faq.md)
 - [Understand the Watchdog security feature](./watchdog.md)
+- [Deploy on Docker](./docker.md)
+- [Deploy on Start9](./start9.md)
 - [Deploy on Umbrel](./umbrel.md)
+- [Read the FAQ](./faq.md)
 
 For complete documentation, see the [Lightning.Pub GitHub repository](https://github.com/shocknet/Lightning.Pub).
 
