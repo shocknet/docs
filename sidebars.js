@@ -33,6 +33,8 @@ const sidebars = {
     'pub/configuration',
     'pub/watchdog',
     'pub/faq',
+    'pub/docker',
+    'pub/start9',
     'pub/umbrel',
     ],
   video: [

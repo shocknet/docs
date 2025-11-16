@@ -44,12 +44,13 @@ LIQUIDITY_PROVIDER_PUB=nprofile1...
 By default, ShockWallet auto-enrolls your CLINK offer at `@shockwallet.app`. For a custom domain:
 
 **Option 1: Run [Bridgelet](https://github.com/shocknet/bridgelet)** - Self-hosted CLINK-based bridge (trustless when payer supports CLINK)
+```bash
+# Configure the bridge URL for wallets
+BRIDGE_URL=https://your-bridge.com
+```
 
 **Option 2: Enable LNURL directly on Pub**
 ```bash
-# Suggest a different LNURL bridge to wallets
-BRIDGE_URL=https://your-bridge.com
-
 # Serve LNURL callbacks directly (requires SSL reverse proxy)
 SERVICE_URL=https://yourdomain.com
 ```
