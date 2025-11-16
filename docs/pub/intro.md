@@ -103,7 +103,7 @@ These are controversial, so we don't include them. You can however add a line to
 
 ### Docker Installation
 
-See the [Deploy on Docker](./docker.md) guide.
+See the [Deploy with Docker](./docker.md) guide.
 
 ### Manual CLI Installation
 
