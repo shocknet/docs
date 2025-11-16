@@ -49,12 +49,6 @@ This method installs all dependencies and creates user-level systemd services.
 
 If you encounter issues, see the [Troubleshooting section in the FAQ](./faq.md#troubleshooting).
 
-## restart service
-In case the service stop working and you are unable to connect, try to restart the service from the terminal with the following comand:
-```
-systemctl --user restart lightning_pub
-```
-
 ## Next Steps
 
 - [Configure your Pub](./configuration.md)
