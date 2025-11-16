@@ -153,7 +153,7 @@ For complete documentation, see the [Lightning.Pub GitHub repository](https://gi
 > [!IMPORTANT]
 > ShockWallet and Lightning.Pub are free software. If you would like to see continued development, please show your [**support**](https://github.com/sponsors/shocknet) 😊
 
-<img src="https://www.gnu.org/graphics/agplv3-with-text-162x68.png" alt="License">
+![License](https://www.gnu.org/graphics/agplv3-with-text-162x68.png)
 
 ## Warning
 
