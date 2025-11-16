@@ -1,16 +1,20 @@
 # Lightning.Pub
 
-Share your node with friends, family, apps, and customers over Nostr with the first Nostr-based account system for Lightning.
-
-## What is Lightning.Pub?
+### Don't just run a Lightning Node, run a Lightning Pub.
 
 "Pub" is a [Nostr](https://nostr.info)-native account system designed to make running Lightning infrastructure for your friends/family/customers easier than previously thought possible.
+
+## What is Lightning.Pub?
 
 Lightning payments open the door to a new internet, but because of UX challenges with sovereignty we've seen a much slower uptake than we should for something so amazing. The biggest hurdle to adoption hasn't been with Bitcoin/Lightning node management itself, as liquidity is easily automated, but rather the legacy baggage of traditional Client-Server web infrastructure. Things like IP4, Reverse Proxies, DNS, Firewalls and SSL certificates all require personal configuration that is a hurdle for most.
 
 Tor as a workaround has proven too slow and unreliable, and a dead-end for clearnet-web usecases. Mobile nodes are easy to use for spending, but channels for every device is expensive and unscalable. UX suffers from the limitations of the node not being an always-online server, which also makes them largely useless for merchants and routing services that earn revenue while you sleep.
 
 **Pub solves these challenges** with a P2P-like design that is also web-friendly, by implementing a full RPC that is Nostr-native. Being Nostr-native eliminates the complexity of configuring your node like a server by using commodity Nostr relays. These relays, unlike LNURL proxies, are trustless by nature of Nostr's own encryption spec (NIP44).
+
+Additionally, support for optional services are integrated into Pub for operators seeking backward compatibility with legacy LNURLs and Lightning Addresses.
+
+By solving the networking and programmability hurdles, Pub provides Lightning with a 3rd Layer that enables node-runners, Businesses, and Uncle Jims to more easily bring their personal network into Bitcoin's permissionless economy. In doing so, Pub runners can keep the Lightning Network decentralized, with custodial scaling that is free of fiat rails, large banks, and other forms of high-time-preference shitcoinery.
 
 ## Key Features
 
@@ -21,6 +25,26 @@ Tor as a workaround has proven too slow and unreliable, and a dead-end for clear
 - **Accounting SubLayers** - Application pools and user-level accounting with configurable fee regimes
 - **CLINK Integration** - Nostr-native invoice transport for trustless payments
 
+![Accounts](https://github.com/shocknet/Lightning.Pub/raw/master/accounting_layers.png)
+
+- Connecting via ShockWallet is as easy as pasting an nprofile
+- Or use a link to share your nprofile with friends and family
+
+<img src="https://cdn.shockwallet.app/add_src_sm.png" height="20%" alt="Connect Wallet"> <img src="https://cdn.shockwallet.app/src_invite_sm.png" height="20%" alt="Invite Guests">
+
+## Planned Features
+
+- [x] A management dashboard is actively being integrated into [ShockWallet](https://github.com/shocknet/wallet2)
+- [x] Nostr native [CLINK](https://clinkme.dev) "offers"
+- [x] Encrypted Push Notifications
+- [ ] P2P "LSP" coordination for channel batching over Nostr
+- [ ] Swap integration
+- [ ] High-Availability / Clustering
+
+Dashboard Wireframe:
+
+<img src="https://shockwallet.b-cdn.net/pub_home_ss.png" alt="Pub Dashboard" width="240">
+
 ## Installation
 
 ### One-Line Deployment
@@ -30,6 +54,10 @@ Paste one line and have a Pub node in under 2 minutes. It uses neutrino so you c
 ```bash
 wget -qO- https://deploy.lightning.pub | bash
 ```
+
+It should look like this in a minute or so:
+
+![One-Line Deployment](https://raw.githubusercontent.com/shocknet/Lightning.Pub/master/one-liner.png)
 
 This method installs all dependencies and creates user-level systemd services.
 
@@ -47,7 +75,69 @@ This method installs all dependencies and creates user-level systemd services.
 - The installer will display an admin connection string (nprofile format) and a **QR code** for easy mobile setup
 - Copy the connection string or scan the QR code with ShockWallet to connect as administrator
 
+**Note:** The installation is now confined to user-space, meaning:
+- No sudo required for installation
+- All data stored in `$HOME/lightning_pub/`
+- Logs available at `$HOME/lightning_pub/install.log`
+
+**⚠️ Migration from Previous Versions:**
+Previous system-wide installations (as of 8.27.2025) need some manual intervention:
+1. Stop existing services: `sudo systemctl stop lnd lightning_pub`
+2. Disable services: `sudo systemctl disable lnd lightning_pub`
+3. Remove old systemd units: `sudo rm /etc/systemd/system/lnd.service /etc/systemd/system/lightning_pub.service`
+4. Reload systemd: `sudo systemctl daemon-reload`
+5. Run the new installer: `wget -qO- https://deploy.lightning.pub | bash`
+
 If you encounter issues, see the [Troubleshooting section in the FAQ](./faq.md#troubleshooting).
+
+#### Automatic Updates
+
+These are controversial, so we don't include them. You can however add a line to your crontab to re-run the installer on your time preference and it will gracefully handle updating:
+
+```bash
+# Add to user's crontab (crontab -e) - runs weekly on Sunday at 2 AM
+0 2 * * 0 wget -qO- https://deploy.lightning.pub | bash
+```
+
+**Note:** The installer will only restart services if version checks deem necessary.
+
+### Docker Installation
+
+See the [Docker Installation Guide](https://github.com/shocknet/Lightning.Pub/blob/master/DOCKER.md).
+
+### Manual CLI Installation
+
+1. Run [LND](https://github.com/lightningnetwork/lnd/releases) if you aren't already:
+
+```ssh
+./lnd --bitcoin.active --bitcoin.mainnet --bitcoin.node=neutrino --neutrino.addpeer=neutrino.shock.network --feeurl=https://nodes.lightning.computer/fees/v1/btc-fee-estimates.json
+```
+
+2. Download and Install Lightning.Pub:
+
+```ssh
+git clone https://github.com/shocknet/Lightning.Pub && cd Lightning.Pub && npm i
+```
+
+3. Configure values in the env file:
+
+```ssh
+cp env.example .env && nano .env
+```
+
+4. Start the service:
+
+```ssh
+npm start
+```
+
+## Usage Notes
+
+Connect with ShockWallet ([wallet2](https://github.com/shocknet/wallet2)) using the wallet admin string that gets logged at startup. Simply copy/paste the string into the node connection screen.
+
+The nprofile of the node can also be used to send invitation links to guests via the web version of ShockWallet.
+
+**Note that connecting with wallet will create an account on the node, it will not show or have access to the full LND balance. Allocating existing funds to the admin user will be added to the operator dashboard in a future release.**
 
 ## Next Steps
 
@@ -57,3 +147,15 @@ If you encounter issues, see the [Troubleshooting section in the FAQ](./faq.md#t
 - [Deploy on Umbrel](./umbrel.md)
 
 For complete documentation, see the [Lightning.Pub GitHub repository](https://github.com/shocknet/Lightning.Pub).
+
+## Support Development
+
+> [!IMPORTANT]
+> ShockWallet and Lightning.Pub are free software. If you would like to see continued development, please show your [**support**](https://github.com/sponsors/shocknet) 😊
+
+<img src="https://www.gnu.org/graphics/agplv3-with-text-162x68.png" alt="License">
+
+## Warning
+
+> [!WARNING]
+> While this software has been used in a high-profile production environment for several years, it should still be considered bleeding edge. Special care has been taken to mitigate the risk of drainage attacks, which is a common risk to all Lightning APIs. An integrated Watchdog service will terminate spends if it detects a discrepancy between LND and the database, for this reason **IT IS NOT RECOMMENDED TO USE PUB ALONGSIDE OTHER ACCOUNT SYSTEMS** such as AlbyHub, LNBits, or BTCPay - this watchdog may however be disabled. While we give the utmost care and attention to security, **the internet is an adversarial environment and SECURITY/RELIABILITY ARE NOT GUARANTEED- USE AT YOUR OWN RISK**.
