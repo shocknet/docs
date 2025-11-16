@@ -1,3 +1,3 @@
-# Adding to Umbrel
+# Deploy on Umbrel
 
-work in progress
+Coming soon.

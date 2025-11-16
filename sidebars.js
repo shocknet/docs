@@ -29,7 +29,7 @@ const sidebars = {
     'wallet/faq',
   ],
   lnpub: [
-    'pub/intro',
+    {type: 'doc', id: 'pub/intro', label: 'Intro'},
     'pub/configuration',
     'pub/watchdog',
     'pub/faq',

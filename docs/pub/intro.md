@@ -103,31 +103,31 @@ These are controversial, so we don't include them. You can however add a line to
 
 ### Docker Installation
 
-See the [Docker Installation Guide](https://github.com/shocknet/Lightning.Pub/blob/master/DOCKER.md).
+See the [Deploy on Docker](./docker.md) guide.
 
 ### Manual CLI Installation
 
 1. Run [LND](https://github.com/lightningnetwork/lnd/releases) if you aren't already:
 
-```ssh
+```bash
 ./lnd --bitcoin.active --bitcoin.mainnet --bitcoin.node=neutrino --neutrino.addpeer=neutrino.shock.network --feeurl=https://nodes.lightning.computer/fees/v1/btc-fee-estimates.json
 ```
 
 2. Download and Install Lightning.Pub:
 
-```ssh
+```bash
 git clone https://github.com/shocknet/Lightning.Pub && cd Lightning.Pub && npm i
 ```
 
 3. Configure values in the env file:
 
-```ssh
+```bash
 cp env.example .env && nano .env
 ```
 
 4. Start the service:
 
-```ssh
+```bash
 npm start
 ```
 

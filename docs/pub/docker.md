@@ -1,14 +1,14 @@
-# Docker Installation
+# Deploy on Docker
 
 1. Pull the Docker image:
 
-```ssh
+```bash
 docker pull ghcr.io/shocknet/lightning-pub:latest
 ```
 
 2. Run the Docker container:
 
-```ssh
+```bash
 docker run -d \
   --name lightning-pub \
   --network host \
