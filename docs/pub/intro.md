@@ -60,7 +60,7 @@ It should look like this in a minute or so:
 ![One-Line Deployment](https://raw.githubusercontent.com/shocknet/Lightning.Pub/master/one-liner.png)
 
 ### Retrieving the admin secret
-If you missed the nprofile out of the script you can view it with `cat ~/lightning_pub/admin.connect` which will include the admin secret so you can [access the dashboard/invite screen](/wallet/faq#how-do-i-open-a-lightning-channel) from [Shockwallet.app](https://Shockwallet.app).
+If you missed the nprofile out of the script you can view it with `cat ~/lightning_pub/admin.connect` which will include the admin secret so you can [access the dashboard/invite screen](/wallet/faq#how-do-i-open-a-lightning-channel:~:text=tap%20the%20wallet%20logo%203%20times) from [Shockwallet.app](https://Shockwallet.app).
 
 - - -
 
