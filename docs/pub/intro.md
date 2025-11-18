@@ -62,6 +62,8 @@ It should look like this in a minute or so:
 ### Retrieving the admin secret
 If you missed the nprofile out of the script you can view it with `cat ~/lightning_pub/admin.connect` which will include the admin secret so you can access the dashboard/invite screen from [Shockwallet.app](https://Shockwallet.app).
 
+- - -
+
 This method installs all dependencies and creates user-level systemd services.
 
 **Platform Support:**
