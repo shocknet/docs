@@ -75,8 +75,10 @@ If you missed the admin connection string or QR code during installation, you ca
 This method installs all dependencies and creates user-level services (systemd on Linux, launchd on macOS).
 
 **Platform Support:**
-- ✅ **Debian/Ubuntu**: Fully tested and supported
-- ✅ **Arch/Fedora**: Fully tested and supported
+- ✅ **Debian**: Fully tested and supported
+- ✅ **Ubuntu**: Fully tested and supported
+- ✅ **Arch**: Fully tested and supported
+- ✅ **Fedora**: Fully tested and supported
 - ✅ **macOS**: Fully supported with launchd service management
 
 **System Requirements:**

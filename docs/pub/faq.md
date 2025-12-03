@@ -13,8 +13,10 @@ Pub also features a management dashboard for node runners, and allows the sendin
 ### Requirements
 
 Pub is a NodeJS application and can run on all major operating systems and architectures. Our automated installer script currently supports:
-- ✅ **Debian/Ubuntu**: Fully tested and supported
-- ✅ **Arch/Fedora**: Fully tested and supported
+- ✅ **Debian**: Fully tested and supported
+- ✅ **Ubuntu**: Fully tested and supported
+- ✅ **Arch**: Fully tested and supported
+- ✅ **Fedora**: Fully tested and supported
 - ✅ **macOS**: Fully supported with launchd service management
 
 Below assumes a Neutrino configuration, meaning that an externally hosted Bitcoin Core is serving block information.
