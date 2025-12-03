@@ -51,8 +51,14 @@ Dashboard Wireframe:
 
 Paste one line and have a Pub node in under 2 minutes. It uses neutrino so you can run it on a $5 VPS or old laptop.
 
+**Linux:**
 ```bash
 wget -qO- https://deploy.lightning.pub | bash
+```
+
+**macOS:**
+```bash
+curl -fsSL https://deploy.lightning.pub | bash
 ```
 
 It should look like this in a minute or so:
@@ -60,16 +66,18 @@ It should look like this in a minute or so:
 ![One-Line Deployment](https://raw.githubusercontent.com/shocknet/Lightning.Pub/master/one-liner.png)
 
 ### Retrieving the admin secret
-If you missed the nprofile out of the script you can view it with `cat ~/lightning_pub/admin.connect` which will include the admin secret so you can [access the dashboard/invite screen](/wallet/faq#how-do-i-open-a-lightning-channel:~:text=tap%20the%20wallet%20logo%203%20times) from [Shockwallet.app](https://Shockwallet.app).
+If you missed the admin connection string or QR code during installation, you can view it with `cat ~/lightning_pub/admin.connect`. This will display the admin connection string (format: `nprofile1...:token`) which you can:
+- Copy/paste into ShockWallet's "Add Source" feature
+- Use to [access the dashboard/invite screen](/wallet/faq#how-do-i-open-a-lightning-channel:~:text=tap%20the%20wallet%20logo%203%20times) from [Shockwallet.app](https://Shockwallet.app)
 
 - - -
 
-This method installs all dependencies and creates user-level systemd services.
+This method installs all dependencies and creates user-level services (systemd on Linux, launchd on macOS).
 
 **Platform Support:**
 - ✅ **Debian/Ubuntu**: Fully tested and supported
 - ✅ **Arch/Fedora**: Fully tested and supported
-- 🚧 **macOS**: Basic support stubbed in, but untested. Help wanted.
+- ✅ **macOS**: Fully supported with launchd service management
 
 **System Requirements:**
 - **RAM**: Minimum 2GB burstable in headless containers or VPS. 4+GB recommended for full Linux Desktop OS.
@@ -77,12 +85,15 @@ This method installs all dependencies and creates user-level systemd services.
 - **Network**: No port forwarding, Tor, or firewall configuration needed!
 
 **After Installation:**
-- The installer will display an admin connection string (nprofile format) and a **QR code** for easy mobile setup
-- Copy the connection string or scan the QR code with ShockWallet to connect as administrator
+- The installer will display an admin connection string (format: `nprofile1...:token`) and a **terminal QR code** containing the same admin connection string
+- Scan the terminal QR code directly with ShockWallet's "Add Source" feature (mobile or web) to pair as administrator
+- You can also copy/paste the connection string into ShockWallet's node connection screen
 
 **Note:** The installation is now confined to user-space, meaning:
 - No sudo required for installation
 - All data stored in `$HOME/lightning_pub/`
+- **Linux**: Services managed via systemd (user-level)
+- **macOS**: Services managed via launchd with convenient aliases
 - Logs available at `$HOME/lightning_pub/install.log`
 
 **⚠️ Migration from Previous Versions:**
@@ -97,14 +108,9 @@ If you encounter issues, see the [Troubleshooting section in the FAQ](./faq.md#t
 
 #### Automatic Updates
 
-These are controversial, so we don't include them. You can however add a line to your crontab to re-run the installer on your time preference and it will gracefully handle updating:
+The installer automatically upgrades Pub instances, but does not does not set up a scheduled job. You can however re-run the installer for a graceful update. The installer will only restart services if version checks deem it necessary.
 
-```bash
-# Add to user's crontab (crontab -e) - runs weekly on Sunday at 2 AM
-0 2 * * 0 wget -qO- https://deploy.lightning.pub | bash
-```
-
-**Note:** The installer will only restart services if version checks deem necessary.
+For automatic updates via cron, see the [Updates section in the FAQ](./faq.md#updates).
 
 ### Docker Installation
 
@@ -138,9 +144,11 @@ npm start
 
 ## Usage Notes
 
-Connect with ShockWallet ([wallet2](https://github.com/shocknet/wallet2)) using the wallet admin string that gets logged at startup. Simply copy/paste the string into the node connection screen.
+Connect with ShockWallet ([wallet2](https://github.com/shocknet/wallet2)) using the admin connection string that gets logged at startup. You can:
+- Scan the **terminal QR code** displayed during installation with ShockWallet's "Add Source" feature (mobile or web)
+- Copy/paste the connection string into ShockWallet's node connection screen
 
-The nprofile of the node can also be used to send invitation links to guests via the web version of ShockWallet.
+The nprofile of the node (without admin token) can also be used to send invitation links to guests via the web version of ShockWallet.
 
 **Note that connecting with wallet will create an account on the node, it will not show or have access to the full LND balance. Allocating existing funds to the admin user will be added to the operator dashboard in a future release.**
 

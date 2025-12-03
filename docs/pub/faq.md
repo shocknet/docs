@@ -15,7 +15,7 @@ Pub also features a management dashboard for node runners, and allows the sendin
 Pub is a NodeJS application and can run on all major operating systems and architectures. Our automated installer script currently supports:
 - ✅ **Debian/Ubuntu**: Fully tested and supported
 - ✅ **Arch/Fedora**: Fully tested and supported
-- 🚧 **macOS**: Basic support stubbed in, but untested
+- ✅ **macOS**: Fully supported with launchd service management
 
 Below assumes a Neutrino configuration, meaning that an externally hosted Bitcoin Core is serving block information.
 
@@ -97,8 +97,14 @@ Pub is under active development, updates are merged several times per week most 
 
 Our installer script does not automatically update Pub instances, but you can simply re-run the installer for a graceful upgrade:
 
+**Linux:**
 ```bash
 wget -qO- https://deploy.lightning.pub | bash
+```
+
+**macOS:**
+```bash
+curl -fsSL https://deploy.lightning.pub | bash
 ```
 
 The installer will only restart services if version checks deem it necessary.
@@ -107,12 +113,22 @@ The installer will only restart services if version checks deem it necessary.
 
 You can add the installer to your crontab to automatically update on your preferred schedule:
 
+**Linux:**
 ```bash
 # Edit your crontab
 crontab -e
 
 # Add this line to run weekly on Sunday at 2 AM
 0 2 * * 0 wget -qO- https://deploy.lightning.pub | bash
+```
+
+**macOS:**
+```bash
+# Edit your crontab
+crontab -e
+
+# Add this line to run weekly on Sunday at 2 AM
+0 2 * * 0 curl -fsSL https://deploy.lightning.pub | bash
 ```
 
 ## Security
@@ -127,6 +143,7 @@ Any wallet connected to the internet is a **"hot wallet"** and **should not be u
 
 If the installation fails or services don't start properly, use these commands to diagnose:
 
+**Linux:**
 ```bash
 # Check service status
 systemctl --user status lnd
@@ -139,9 +156,32 @@ journalctl --user-unit lightning_pub -f
 # Restart services if needed
 systemctl --user restart lnd
 systemctl --user restart lightning_pub
+```
 
+**macOS:**
+After installation, run `source ~/.zshrc` (or `source ~/.bash_profile`) to enable the convenience aliases, or open a new terminal. Then use:
+
+```bash
+# Check service status
+lpub-status
+
+# View logs
+lpub-log      # Lightning.Pub logs
+lnd-log       # LND logs
+
+# Control services
+lpub-start    # Start both services
+lpub-stop     # Stop both services
+lpub-restart  # Restart both services
+```
+
+**All Platforms:**
+```bash
 # Retrieve admin connection string (if installation completed but you need to find it again)
 cat ~/lightning_pub/admin.connect
+
+# Generate QR code from admin connection string (optional, requires Node.js)
+node ~/lightning_pub/scripts/qr_generator.js "$(cat ~/lightning_pub/admin.connect)"
 
 # Reset admin access (generates new admin.connect automatically)
 rm ~/lightning_pub/admin.npub
@@ -155,13 +195,19 @@ cat ~/lightning_pub/admin.connect
 
 The wallet will automatically unlock during the initial sync (this can take several minutes). If LND is not starting:
 
+**Linux:**
 1. Check LND logs: `journalctl --user-unit lnd -n 50`
 2. Verify LND is running: `systemctl --user status lnd`
 3. If needed, restart: `systemctl --user restart lnd`
 
-#### Admin connection string not appearing
+**macOS:**
+1. Check LND logs: `lnd-log` or `tail -f ~/Library/Logs/Lightning.Pub/lnd.log`
+2. Verify LND is running: `lpub-status`
+3. If needed, restart: `lpub-restart`
 
-If the admin connection string isn't displayed after installation, it typically means the installation script failed. Check the service logs to diagnose the issue.
+#### Admin connection string or QR code not appearing
+
+If the admin connection string and terminal QR code aren't displayed after installation, it typically means the installation script failed. Check the service logs to diagnose the issue. You can also manually retrieve the connection string with `cat ~/lightning_pub/admin.connect` and generate a QR code if needed (see troubleshooting commands above).
 
 #### Port conflicts
 

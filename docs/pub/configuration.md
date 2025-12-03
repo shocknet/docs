@@ -69,11 +69,21 @@ WATCHDOG_MAX_DIFF_SATS=0
 
 If running LND separately or using non-standard paths:
 
+**Linux (default):**
 ```bash
 LND_ADDRESS=127.0.0.1:10009
 LND_CERT_PATH=~/.lnd/tls.cert
 LND_MACAROON_PATH=~/.lnd/data/chain/bitcoin/mainnet/admin.macaroon
 ```
+
+**macOS (default):**
+```bash
+LND_ADDRESS=127.0.0.1:10009
+LND_CERT_PATH=~/Library/Application Support/Lnd/tls.cert
+LND_MACAROON_PATH=~/Library/Application Support/Lnd/data/chain/bitcoin/mainnet/admin.macaroon
+```
+
+The installer automatically configures these paths based on your operating system, so you typically don't need to set them manually.
 
 ### Fee Configuration
 
