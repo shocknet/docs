@@ -24,6 +24,7 @@
   --bx-a:#9B63FF;--bx-on:#8A6BE5;
   --ns-a:#3C3C3C;--ns-on:#8A8A8A;
   --ghost-border:#3C3C3C;--ghost-text:#F1F1F1;
+  --nr-a:#F7FF00;--nr-b:#59B942;--nr-on-a:#111213;--nr-on-b:#111213;
 }
 [data-theme="light"]{
   --bg:#F2F2EF;--surface:#FFFFFF;--border:#D0D0CC;
@@ -38,6 +39,8 @@
   --bx-a:#9B63FF;--bx-on:#8A6BE5;
   --ns-a:#3C3C3C;--ns-on:#8A8A8A;
   --ghost-border:#D0D0CC;--ghost-text:#111213;
+  --bx-a:#8A6BE5;
+  --nr-a:#D4C800;--nr-b:#3D8428;--nr-on-a:#111213;--nr-on-b:#111213;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -330,24 +333,24 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 
 <!-- NAV -->
 <nav>
-  <ul class="nav-links">
-    <li><a href="#brand">01 — SHOCKNET</a></li>
-    <li><a href="#shockwallet">02 - SHOCKWALLET</a></li>
-    <li><a href="#lnpub">03 - LIGHTNING.pub</a></li>
-    <li><a href="#lnvideo">04 - LIGHTNING.video</a></li>
-    <li><a href="#clink">05 - CLINK</a></li>
-    <li><a href="#sanctum">06 - SANCTUM</a></li>
-    <li><a href="#color">07 — Color</a></li>
-    <li><a href="#type">08 — Typography</a></li>
-    <li><a href="#components">09 — Components</a></li>
-    <li><a href="#icons">10 — Icons</a></li>
-
-  <li><a href="#spacing">11 - Spacing</a></li>
-  <li><a href="#voice">12 - Voice</a></li>
-  <li><a href="#surfaces">13 - Surfaces</a></li>
-  <li><a href="#cobranding">14 - Co-branding</a></li>
-
-
+<ul class="nav-links">
+  <li><a href="#brand">01 — SHOCKNET</a></li>
+  <li><a href="#shockwallet">02 - SHOCKWALLET</a></li>
+  <li><a href="#lnpub">03 - LIGHTNING.pub</a></li>
+  <li><a href="#lnvideo">04 - LIGHTNING.video</a></li>
+  <li><a href="#bxrd">05 - BXRD</a></li>
+  <li><a href="#sanctum">06 - SANCTUM</a></li>
+  <li><a href="#clink">07 - CLINK</a></li>
+  <li><a href="#nymrank">08 - NYMRANK</a></li>
+  <li><a href="#color">09 — Color</a></li>
+  <li><a href="#type">10 — Typography</a></li>
+  <li><a href="#components">11 — Components</a></li>
+  <li><a href="#icons">12 — Icons</a></li>
+  <li><a href="#spacing">13 - Spacing</a></li>
+  <li><a href="#voice">14 - Voice</a></li>
+  <li><a href="#surfaces">15 - Surfaces</a></li>
+  <li><a href="#cobranding">16 - Co-branding</a></li>
+</ul>
   </ul>
   <div class="toggle-wrap">
     <span class="toggle-name" id="theme-label">DARK</span>
@@ -712,45 +715,50 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
   </div>
 </section>
 
-<!-- ══════════ 05 CLINK ══════════ -->
-<section id="clink">
+<!-- ══════════ 05 BXRD ══════════ -->
+<section id="bxrd">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:linear-gradient(180deg,var(--cl-a),var(--cl-b))"></div><div><span class="section-tag">05 - PRODUCT</span><h2>CLINK</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--bx-a)"></div><div><span class="section-tag">05 - PRODUCT</span><h2>BXRD</h2></div></div>
     <div class="rule"></div>
-    <p style="max-width:560px;margin-bottom:28px">Lightning-powered tipping and micro-transactions. Yellow signals speed and energy; violet adds depth and a sense of occasion. Together they make every transaction feel like a celebration.</p>
-    <div class="callout"><span class="callout-icon">⚡</span><div><h6>CLINK colors change per theme</h6><p>Dark: Yellow <strong style="color:var(--text)">#F7FF00</strong> / Purple <strong style="color:var(--text)">#9B63FF</strong> &nbsp;·&nbsp; Light: Yellow <strong style="color:var(--text)">#F0E91A</strong> / Purple <strong style="color:var(--text)">#8A6BE5</strong></p></div></div>
+    <p style="max-width:560px;margin-bottom:28px">BXRD is the social and publishing layer of the SHOCKNET ecosystem. A singular violet communicates depth, creativity, and the expressive power of decentralised identity.</p>
+    <div class="callout"><span class="callout-icon">🟣</span><div><h6>BXRD color shifts between themes</h6><p>Dark: <strong style="color:var(--text)">#9B63FF</strong> — vivid violet on dark surfaces &nbsp;·&nbsp; Light: <strong style="color:var(--text)">#8A6BE5</strong> — deeper violet for legibility on white</p></div></div>
     <div class="g2" style="margin-bottom:20px">
       <div><span style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-dim);display:block;margin-bottom:10px">Logotype — Active Theme</span>
         <div class="logo-box">
-          <svg width="280" height="64" viewBox="0 0 324 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.94434 55.9229L26.2432 52.9229L13.252 76.1387C5.70852 69.9025 0.900462 60.4747 0.900391 49.9229C0.900391 31.1452 16.1227 15.9229 34.9004 15.9229C45.4646 15.9229 57.7758 9.96767 68.8604 0L7.94434 55.9229Z" fill="var(--cl-a)"/>
-            <path d="M55.7607 23.0732C63.7563 29.2942 68.9004 39.0076 68.9004 49.9229C68.9003 68.7004 53.678 83.9229 34.9004 83.9229C23.7075 83.9229 10.95 89.8965 0 99.8965C0 99.8965 0.0182273 99.8689 0.0556641 99.8174L59.9443 43.9229L42.1797 46.9229L55.7607 23.0732Z" fill="var(--cl-b)"/>
-            <path class="wm" d="M277.151 29H290.399L281.631 53.512L308.255 29H323.359L301.215 49.736L308.127 71.688H293.535L289.951 60.168L276.895 71.688H261.919L277.151 29Z"/>
-            <path class="wm" d="M206.892 71.688L222.124 29H236.204L246.252 52.04H246.7L254.956 29H268.204L252.972 71.688H238.828L228.78 48.712H228.332L220.14 71.688H206.892Z"/>
-            <path class="wm" d="M196.882 37.256L194.386 29H213.074L197.842 71.688H184.594L196.882 37.256Z"/>
-            <path class="wm" d="M153.319 29H166.567L155.495 60.168H179.815L175.655 71.688H138.087L153.319 29Z"/>
-            <path class="wm" d="M97.447 71.688C96.295 71.688 95.207 71.56 94.311 71.176C93.415 70.856 92.647 70.344 92.135 69.704C91.559 69.064 91.175 68.296 91.047 67.4C90.919 66.504 91.047 65.416 91.495 64.264L101.479 36.424C102.311 34.12 103.783 32.328 105.895 30.984C108.007 29.704 110.247 29 112.679 29H144.359L142.695 33.672C142.439 34.44 142.055 35.208 141.671 35.976C141.287 36.744 140.839 37.512 140.327 38.152C139.815 38.856 139.239 39.432 138.663 39.88C138.023 40.328 137.447 40.52 136.807 40.52H113.255L106.279 60.168H133.287L129.127 71.688H97.447Z"/>
+          <svg width="360" height="68" viewBox="0 0 294 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M292.6 22.424L282.616 50.264C281.72 52.568 280.248 54.424 278.136 55.704C276.024 57.048 273.784 57.688 271.416 57.688H235L250.232 15H286.648C287.8 15 288.824 15.192 289.784 15.512C290.68 15.896 291.448 16.344 292.024 16.984C292.536 17.624 292.92 18.456 293.048 19.352C293.176 20.248 292.984 21.272 292.6 22.424ZM270.904 46.168L277.88 26.52H259.384L252.408 46.168H270.904Z" fill="var(--text)"/>
+            <path d="M194.683 57.688H181.435L196.667 15H233.083C234.235 15 235.259 15.192 236.219 15.512C237.115 15.896 237.883 16.344 238.459 16.984C238.971 17.624 239.355 18.456 239.483 19.352C239.611 20.248 239.419 21.272 239.035 22.424L233.019 39.256C232.635 40.28 232.059 41.24 231.355 42.072C230.587 42.904 229.755 43.608 228.859 44.248C227.899 44.888 226.875 45.4 225.787 45.784C224.699 46.168 223.675 46.488 222.651 46.616L229.115 57.688H214.075L207.163 46.68H198.587L194.683 57.688ZM205.819 26.52L202.747 35.16H221.243L224.315 26.52H205.819Z" fill="var(--text)"/>
+            <path d="M146.269 15H161.373L165.469 26.008L177.373 15H192.477L169.309 36.376L177.245 57.688H162.077L158.045 46.808L146.205 57.688H131.037L154.013 36.376L146.269 15Z" fill="var(--text)"/>
+            <path d="M82.5596 57.688L97.7916 15H134.208C135.36 15 136.384 15.192 137.344 15.512C138.24 15.896 139.008 16.344 139.584 16.984C140.096 17.624 140.48 18.456 140.608 19.352C140.736 20.248 140.544 21.272 140.16 22.424L137.6 29.592C136.96 31.128 136.128 32.408 135.04 33.496C133.888 34.648 132.608 35.48 131.2 36.056C132.096 36.632 132.8 37.4 133.184 38.424C133.568 39.448 133.568 40.664 133.12 42.008L130.176 50.264C129.28 52.568 127.808 54.424 125.696 55.704C123.584 57.048 121.344 57.688 118.976 57.688H82.5596ZM105.472 30.616H123.968L125.44 26.52H106.944L105.472 30.616ZM99.9676 46.168H118.464L119.872 42.136H101.376L99.9676 46.168Z" fill="var(--text)"/>
+            <!-- BXRD mark -->
+            <path d="M34 0C52.7777 0 68 15.2223 68 34C68 52.7777 52.7777 68 34 68C30.2351 68 26.6135 67.3867 23.2285 66.2568C24.1164 63.7766 25.5412 59.9205 27.2598 54.8379C30.0197 46.6755 32.2155 42.5281 33.9521 39.1201C34.9934 37.0705 36.7103 35.9552 38.6816 35.3584C42.4066 34.239 52.942 34.0038 55.7158 33.8721C55.7973 33.8752 64.0943 34.1816 64.0947 29.46C64.0944 25.6646 60.3951 25.9379 60.3496 25.9414C56.2221 26.0484 53.0772 25.7682 51.04 24.9658C47.629 23.6243 47.5134 21.1633 47.501 20.3398C47.3319 10.8331 33.3137 9.69362 20.9629 12.0518C7.46037 14.6203 21.0001 33.5 11.9004 59.5C11.8703 59.586 11.8381 59.6715 11.8076 59.7578C4.57748 53.5229 0 44.2963 0 34C0 15.2223 15.2223 0 34 0Z" fill="var(--bx-a)"/>
+            <path d="M37.8994 17.0195C40.6567 17.0198 42.8916 19.2544 42.8916 22.0117C42.8912 24.7687 40.6564 27.0037 37.8994 27.0039C35.1422 27.0039 32.9076 24.7688 32.9072 22.0117C32.9072 19.2543 35.142 17.0196 37.8994 17.0195Z" fill="var(--bx-a)"/>
           </svg>
         </div>
       </div>
       <div><span style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-dim);display:block;margin-bottom:10px">Avatar Theme Variants</span>
         <div class="mark-pair">
-          <div><span class="mono" style="display:block;margin-bottom:6px">Dark</span><div class="mark-dark"><svg width="52" height="76" viewBox="0 0 69 100" fill="none"><path d="M7.94 55.92L26.24 52.92 13.25 76.14C5.71 69.9.9 60.47.9 49.92.9 31.15 16.12 15.92 34.9 15.92c10.56 0 22.88-5.95 33.96-15.92L7.94 55.92Z" fill="#F7FF00"/><path d="M55.76 23.07C63.76 29.29 68.9 39.01 68.9 49.92c0 18.78-15.22 34-34 34C23.71 83.92 10.95 89.9 0 99.9L59.94 43.92 42.18 46.92 55.76 23.07Z" fill="#9B63FF"/></svg></div></div>
-          <div><span class="mono" style="display:block;margin-bottom:6px">Light</span><div class="mark-light"><svg width="52" height="76" viewBox="0 0 69 100" fill="none"><path d="M7.94 55.92L26.24 52.92 13.25 76.14C5.71 69.9.9 60.47.9 49.92.9 31.15 16.12 15.92 34.9 15.92c10.56 0 22.88-5.95 33.96-15.92L7.94 55.92Z" fill="#F0E91A"/><path d="M55.76 23.07C63.76 29.29 68.9 39.01 68.9 49.92c0 18.78-15.22 34-34 34C23.71 83.92 10.95 89.9 0 99.9L59.94 43.92 42.18 46.92 55.76 23.07Z" fill="#8A6BE5"/></svg></div></div>
+          <div><span class="mono" style="display:block;margin-bottom:6px">Dark · #9B63FF</span>
+            <div class="mark-dark" style="min-height:110px">
+              <svg width="68" height="68" viewBox="0 0 68 68" fill="none"><path d="M34 0C52.7777 0 68 15.2223 68 34C68 52.7777 52.7777 68 34 68C30.2351 68 26.6135 67.3867 23.2285 66.2568C24.1164 63.7766 25.5412 59.9205 27.2598 54.8379C30.0197 46.6755 32.2155 42.5281 33.9521 39.1201C34.9934 37.0705 36.7103 35.9552 38.6816 35.3584C42.4066 34.239 52.942 34.0038 55.7158 33.8721C55.7973 33.8752 64.0943 34.1816 64.0947 29.46C64.0944 25.6646 60.3951 25.9379 60.3496 25.9414C56.2221 26.0484 53.0772 25.7682 51.04 24.9658C47.629 23.6243 47.5134 21.1633 47.501 20.3398C47.3319 10.8331 33.3137 9.69362 20.9629 12.0518C7.46037 14.6203 21.0001 33.5 11.9004 59.5C11.8703 59.586 11.8381 59.6715 11.8076 59.7578C4.57748 53.5229 0 44.2963 0 34C0 15.2223 15.2223 0 34 0Z" fill="#9B63FF"/><path d="M37.8994 17.0195C40.6567 17.0198 42.8916 19.2544 42.8916 22.0117C42.8912 24.7687 40.6564 27.0037 37.8994 27.0039C35.1422 27.0039 32.9076 24.7688 32.9072 22.0117C32.9072 19.2543 35.142 17.0196 37.8994 17.0195Z" fill="#9B63FF"/></svg>
+            </div>
+          </div>
+          <div><span class="mono" style="display:block;margin-bottom:6px">Light · #8A6BE5</span>
+            <div class="mark-light" style="min-height:110px">
+              <svg width="68" height="68" viewBox="0 0 68 68" fill="none"><path d="M34 0C52.7777 0 68 15.2223 68 34C68 52.7777 52.7777 68 34 68C30.2351 68 26.6135 67.3867 23.2285 66.2568C24.1164 63.7766 25.5412 59.9205 27.2598 54.8379C30.0197 46.6755 32.2155 42.5281 33.9521 39.1201C34.9934 37.0705 36.7103 35.9552 38.6816 35.3584C42.4066 34.239 52.942 34.0038 55.7158 33.8721C55.7973 33.8752 64.0943 34.1816 64.0947 29.46C64.0944 25.6646 60.3951 25.9379 60.3496 25.9414C56.2221 26.0484 53.0772 25.7682 51.04 24.9658C47.629 23.6243 47.5134 21.1633 47.501 20.3398C47.3319 10.8331 33.3137 9.69362 20.9629 12.0518C7.46037 14.6203 21.0001 33.5 11.9004 59.5C11.8703 59.586 11.8381 59.6715 11.8076 59.7578C4.57748 53.5229 0 44.2963 0 34C0 15.2223 15.2223 0 34 0Z" fill="#8A6BE5"/><path d="M37.8994 17.0195C40.6567 17.0198 42.8916 19.2544 42.8916 22.0117C42.8912 24.7687 40.6564 27.0037 37.8994 27.0039C35.1422 27.0039 32.9076 24.7688 32.9072 22.0117C32.9072 19.2543 35.142 17.0196 37.8994 17.0195Z" fill="#8A6BE5"/></svg>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="dl-row"><span class="dl-label" style="width:100%">Download CLINK  Avatar + Logo</span>
-      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/CLINK.zip');"></span color="#f1f1f1">Dark SVG + PNG Pack.zip</span></button>
-      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/CLINK.zip');"></span color="#111213">Light SVG + PNG Pack.zip</span></button>
-      <button class="btn-sm btn-sn-sm" onclick="downloadSVG('clink','light')"></span color="#f1f1f1">Dark Logo.svg</button>
-      <button class="btn-sm btn-sn-out" onclick="downloadSVG('clink','dark')">Light Logo.svg</button>
-      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/CLINK/Avatars.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatars.zip</span></button>
-      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/CLINK/Avatars.zip');"></span color="#111213">Light SVG + PNG Avatars.zip</span></button>
+    <div class="dl-row">
+      <span class="dl-label" style="width:100%">Download BXRD Avatar + Logo</span>
+      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/BXRD.zip')">Dark SVG + PNG Pack.zip</button>
+      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/BXRD.zip')">Light SVG + PNG Pack.zip</button>
     </div>
   </div>
 </section>
-
+  
 <!-- ══════════ 06 SANCTUM ══════════ -->
 <section id="sanctum">
   <div class="page">
@@ -805,10 +813,106 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 </section>
 
 
-<!-- ══════════ 07 COLOR ══════════ -->
+  
+  
+  <!-- ══════════ 07 CLINK ══════════ -->
+
+  <section id="clink">
+  <div class="page">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:linear-gradient(180deg,var(--cl-a),var(--cl-b))"></div><div><span class="section-tag">07 - PRODUCT</span><h2>CLINK</h2></div></div>
+    <div class="rule"></div>
+    <p style="max-width:560px;margin-bottom:28px">Lightning-powered tipping and micro-transactions. Yellow signals speed and energy; violet adds depth and a sense of occasion. Together they make every transaction feel like a celebration.</p>
+    <div class="callout"><span class="callout-icon">⚡</span><div><h6>CLINK colors change per theme</h6><p>Dark: Yellow <strong style="color:var(--text)">#F7FF00</strong> / Purple <strong style="color:var(--text)">#9B63FF</strong> &nbsp;·&nbsp; Light: Yellow <strong style="color:var(--text)">#F0E91A</strong> / Purple <strong style="color:var(--text)">#8A6BE5</strong></p></div></div>
+    <div class="g2" style="margin-bottom:20px">
+      <div><span style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-dim);display:block;margin-bottom:10px">Logotype — Active Theme</span>
+        <div class="logo-box">
+          <svg width="280" height="64" viewBox="0 0 324 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.94434 55.9229L26.2432 52.9229L13.252 76.1387C5.70852 69.9025 0.900462 60.4747 0.900391 49.9229C0.900391 31.1452 16.1227 15.9229 34.9004 15.9229C45.4646 15.9229 57.7758 9.96767 68.8604 0L7.94434 55.9229Z" fill="var(--cl-a)"/>
+            <path d="M55.7607 23.0732C63.7563 29.2942 68.9004 39.0076 68.9004 49.9229C68.9003 68.7004 53.678 83.9229 34.9004 83.9229C23.7075 83.9229 10.95 89.8965 0 99.8965C0 99.8965 0.0182273 99.8689 0.0556641 99.8174L59.9443 43.9229L42.1797 46.9229L55.7607 23.0732Z" fill="var(--cl-b)"/>
+            <path class="wm" d="M277.151 29H290.399L281.631 53.512L308.255 29H323.359L301.215 49.736L308.127 71.688H293.535L289.951 60.168L276.895 71.688H261.919L277.151 29Z"/>
+            <path class="wm" d="M206.892 71.688L222.124 29H236.204L246.252 52.04H246.7L254.956 29H268.204L252.972 71.688H238.828L228.78 48.712H228.332L220.14 71.688H206.892Z"/>
+            <path class="wm" d="M196.882 37.256L194.386 29H213.074L197.842 71.688H184.594L196.882 37.256Z"/>
+            <path class="wm" d="M153.319 29H166.567L155.495 60.168H179.815L175.655 71.688H138.087L153.319 29Z"/>
+            <path class="wm" d="M97.447 71.688C96.295 71.688 95.207 71.56 94.311 71.176C93.415 70.856 92.647 70.344 92.135 69.704C91.559 69.064 91.175 68.296 91.047 67.4C90.919 66.504 91.047 65.416 91.495 64.264L101.479 36.424C102.311 34.12 103.783 32.328 105.895 30.984C108.007 29.704 110.247 29 112.679 29H144.359L142.695 33.672C142.439 34.44 142.055 35.208 141.671 35.976C141.287 36.744 140.839 37.512 140.327 38.152C139.815 38.856 139.239 39.432 138.663 39.88C138.023 40.328 137.447 40.52 136.807 40.52H113.255L106.279 60.168H133.287L129.127 71.688H97.447Z"/>
+          </svg>
+        </div>
+      </div>
+      <div><span style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-dim);display:block;margin-bottom:10px">Avatar Theme Variants</span>
+        <div class="mark-pair">
+          <div><span class="mono" style="display:block;margin-bottom:6px">Dark</span><div class="mark-dark"><svg width="52" height="76" viewBox="0 0 69 100" fill="none"><path d="M7.94 55.92L26.24 52.92 13.25 76.14C5.71 69.9.9 60.47.9 49.92.9 31.15 16.12 15.92 34.9 15.92c10.56 0 22.88-5.95 33.96-15.92L7.94 55.92Z" fill="#F7FF00"/><path d="M55.76 23.07C63.76 29.29 68.9 39.01 68.9 49.92c0 18.78-15.22 34-34 34C23.71 83.92 10.95 89.9 0 99.9L59.94 43.92 42.18 46.92 55.76 23.07Z" fill="#9B63FF"/></svg></div></div>
+          <div><span class="mono" style="display:block;margin-bottom:6px">Light</span><div class="mark-light"><svg width="52" height="76" viewBox="0 0 69 100" fill="none"><path d="M7.94 55.92L26.24 52.92 13.25 76.14C5.71 69.9.9 60.47.9 49.92.9 31.15 16.12 15.92 34.9 15.92c10.56 0 22.88-5.95 33.96-15.92L7.94 55.92Z" fill="#F0E91A"/><path d="M55.76 23.07C63.76 29.29 68.9 39.01 68.9 49.92c0 18.78-15.22 34-34 34C23.71 83.92 10.95 89.9 0 99.9L59.94 43.92 42.18 46.92 55.76 23.07Z" fill="#8A6BE5"/></svg></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="dl-row"><span class="dl-label" style="width:100%">Download CLINK  Avatar + Logo</span>
+      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/CLINK.zip');"></span color="#f1f1f1">Dark SVG + PNG Pack.zip</span></button>
+      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/CLINK.zip');"></span color="#111213">Light SVG + PNG Pack.zip</span></button>
+      <button class="btn-sm btn-sn-sm" onclick="downloadSVG('clink','light')"></span color="#f1f1f1">Dark Logo.svg</button>
+      <button class="btn-sm btn-sn-out" onclick="downloadSVG('clink','dark')">Light Logo.svg</button>
+      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/CLINK/Avatars.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatars.zip</span></button>
+      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/CLINK/Avatars.zip');"></span color="#111213">Light SVG + PNG Avatars.zip</span></button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ══════════ 08 NYMRANK ══════════ -->
+<section id="nymrank">
+  <div class="page">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:linear-gradient(180deg,var(--nr-a),var(--nr-b))"></div><div><span class="section-tag">08 - PRODUCT</span><h2>NYMRANK</h2></div></div>
+    <div class="rule"></div>
+    <p style="max-width:560px;margin-bottom:28px">NYMRANK is a pseudonymous reputation and ranking protocol built on the Lightning Network. Yellow signals signal strength and visibility; green signals trust, growth, and on-chain verification.</p>
+    <div class="callout"><span class="callout-icon">🟡</span><div><h6>NYMRANK uses two colors that both shift per theme</h6><p>Dark: Yellow <strong style="color:var(--text)">#F7FF00</strong> / Green <strong style="color:var(--text)">#59B942</strong> &nbsp;·&nbsp; Light: Yellow <strong style="color:var(--text)">#D4C800</strong> / Green <strong style="color:var(--text)">#3D8428</strong></p></div></div>
+    <div class="g2" style="margin-bottom:20px">
+      <div><span style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-dim);display:block;margin-bottom:10px">Logotype — Active Theme</span>
+        <div class="logo-box">
+          <svg width="380" height="58" viewBox="0 0 475 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M428.625 16H441.873L433.105 40.512L459.729 16H474.833L452.689 36.736L459.601 58.688H445.009L441.425 47.168L428.369 58.688H413.393L428.625 16Z" fill="var(--text)"/>
+            <path d="M359.285 58.688L374.517 16H388.597L398.645 39.04H399.093L407.349 16H420.597L405.365 58.688H391.221L381.173 35.712H380.725L372.533 58.688H359.285Z" fill="var(--text)"/>
+            <path d="M327.418 24.256L324.922 16H351.866L355.194 58.688H340.538L340.154 52.672H319.546L314.81 58.688H300.218L327.418 24.256ZM338.554 28.416L328.57 41.088H339.322L338.554 28.416Z" fill="var(--text)"/>
+            <path d="M262.443 58.688H249.195L264.427 16H300.843C301.995 16 303.019 16.192 303.979 16.512C304.875 16.896 305.643 17.344 306.219 17.984C306.731 18.624 307.115 19.456 307.243 20.352C307.371 21.248 307.179 22.272 306.795 23.424L300.779 40.256C300.395 41.28 299.819 42.24 299.115 43.072C298.347 43.904 297.515 44.608 296.619 45.248C295.659 45.888 294.635 46.4 293.547 46.784C292.459 47.168 291.435 47.488 290.411 47.616L296.875 58.688H281.835L274.923 47.68H266.347L262.443 58.688ZM273.579 27.52L270.507 36.16H289.003L292.075 27.52H273.579Z" fill="var(--text)"/>
+            <path d="M187.213 58.688L202.445 16H218.317L222.541 35.2L240.525 16H256.397L241.165 58.688H227.917L235.789 36.608L214.989 58.688H213.389L208.333 36.608L200.461 58.688H187.213Z" fill="var(--text)"/>
+            <path d="M164.288 58.688H151.04L154.944 47.68H147.648C146.496 47.68 145.408 47.552 144.512 47.168C143.616 46.848 142.848 46.336 142.336 45.696C141.76 45.056 141.44 44.288 141.312 43.392C141.184 42.496 141.312 41.408 141.76 40.256L150.4 16H163.648L156.48 36.16H174.976L182.144 16H195.392L186.752 40.256C186.304 41.408 185.664 42.496 184.896 43.392C184.128 44.288 183.232 45.056 182.208 45.696C181.184 46.336 180.096 46.848 178.944 47.168C177.792 47.552 176.64 47.68 175.488 47.68H168.192L164.288 58.688Z" fill="var(--text)"/>
+            <path d="M94.328 24.256L91.832 16H111.352L121.4 39.04H121.848L130.104 16H143.352L128.12 58.688H113.976L103.928 35.712H103.48L95.288 58.688H82.04L94.328 24.256Z" fill="var(--text)"/>
+            <!-- NYMRANK mark — green lower, yellow upper -->
+            <path d="M62.8545 16.0127C66.114 21.2304 68 27.3945 68 34C68 52.7777 52.7777 68 34 68C23.7014 68 14.4733 63.4204 8.23828 56.1875C9.1531 56.7037 10.2074 57 11.3311 57C14.8275 57 17.6621 54.1497 17.6621 50.6338C17.6621 48.7571 16.8541 47.0704 15.5693 45.9053L23.6367 23.7314C24.1518 23.7272 24.653 23.661 25.1318 23.54L39.4512 46.6826C38.5955 47.7682 38.085 49.141 38.085 50.6338C38.085 54.1495 40.9187 56.9998 44.415 57C47.9115 57 50.7461 54.1497 50.7461 50.6338C50.7461 48.7573 49.9389 47.0704 48.6543 45.9053L56.7217 23.7314C60.1939 23.703 62.9999 20.8644 63 17.3662C63 16.9016 62.9485 16.449 62.8545 16.0127Z" fill="var(--nr-b)"/>
+            <path d="M34 0C44.2981 0 53.5257 4.57925 59.7607 11.8115C58.8462 11.2957 57.7921 11 56.6689 11C53.1725 11 50.3379 13.8503 50.3379 17.3662C50.3379 19.4362 51.3211 21.2749 52.8428 22.4375L44.8945 44.2852C44.7365 44.2733 44.5761 44.2676 44.415 44.2676C43.8872 44.2676 43.374 44.3336 42.8838 44.4561L28.5586 21.3047C29.4083 20.2211 29.915 18.8532 29.915 17.3662C29.915 13.8505 27.0813 11.0002 23.585 11C20.0885 11 17.2539 13.8503 17.2539 17.3662C17.254 19.4363 18.2369 21.2749 19.7588 22.4375L11.8096 44.2852C11.6516 44.2733 11.492 44.2676 11.3311 44.2676C7.83459 44.2676 5.00008 47.118 5 50.6338C5 51.098 5.05072 51.5504 5.14453 51.9863C1.88547 46.7689 0 40.605 0 34C0 15.2223 15.2223 0 34 0Z" fill="var(--nr-a)"/>
+          </svg>
+        </div>
+      </div>
+      <div><span style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-dim);display:block;margin-bottom:10px">Avatar Theme Variants</span>
+        <div class="mark-pair">
+          <div><span class="mono" style="display:block;margin-bottom:6px">Dark</span>
+            <div class="mark-dark" style="min-height:110px">
+              <svg width="68" height="68" viewBox="0 0 68 68" fill="none">
+                <path d="M62.8545 16.0127C66.114 21.2304 68 27.3945 68 34C68 52.7777 52.7777 68 34 68C23.7014 68 14.4733 63.4204 8.23828 56.1875C9.1531 56.7037 10.2074 57 11.3311 57C14.8275 57 17.6621 54.1497 17.6621 50.6338C17.6621 48.7571 16.8541 47.0704 15.5693 45.9053L23.6367 23.7314C24.1518 23.7272 24.653 23.661 25.1318 23.54L39.4512 46.6826C38.5955 47.7682 38.085 49.141 38.085 50.6338C38.085 54.1495 40.9187 56.9998 44.415 57C47.9115 57 50.7461 54.1497 50.7461 50.6338C50.7461 48.7573 49.9389 47.0704 48.6543 45.9053L56.7217 23.7314C60.1939 23.703 62.9999 20.8644 63 17.3662C63 16.9016 62.9485 16.449 62.8545 16.0127Z" fill="#59B942"/>
+                <path d="M34 0C44.2981 0 53.5257 4.57925 59.7607 11.8115C58.8462 11.2957 57.7921 11 56.6689 11C53.1725 11 50.3379 13.8503 50.3379 17.3662C50.3379 19.4362 51.3211 21.2749 52.8428 22.4375L44.8945 44.2852C44.7365 44.2733 44.5761 44.2676 44.415 44.2676C43.8872 44.2676 43.374 44.3336 42.8838 44.4561L28.5586 21.3047C29.4083 20.2211 29.915 18.8532 29.915 17.3662C29.915 13.8505 27.0813 11.0002 23.585 11C20.0885 11 17.2539 13.8503 17.2539 17.3662C17.254 19.4363 18.2369 21.2749 19.7588 22.4375L11.8096 44.2852C11.6516 44.2733 11.492 44.2676 11.3311 44.2676C7.83459 44.2676 5.00008 47.118 5 50.6338C5 51.098 5.05072 51.5504 5.14453 51.9863C1.88547 46.7689 0 40.605 0 34C0 15.2223 15.2223 0 34 0Z" fill="#F7FF00"/>
+              </svg>
+            </div>
+          </div>
+          <div><span class="mono" style="display:block;margin-bottom:6px">Light</span>
+            <div class="mark-light" style="min-height:110px">
+              <svg width="68" height="68" viewBox="0 0 68 68" fill="none">
+                <path d="M62.8545 16.0127C66.114 21.2304 68 27.3945 68 34C68 52.7777 52.7777 68 34 68C23.7014 68 14.4733 63.4204 8.23828 56.1875C9.1531 56.7037 10.2074 57 11.3311 57C14.8275 57 17.6621 54.1497 17.6621 50.6338C17.6621 48.7571 16.8541 47.0704 15.5693 45.9053L23.6367 23.7314C24.1518 23.7272 24.653 23.661 25.1318 23.54L39.4512 46.6826C38.5955 47.7682 38.085 49.141 38.085 50.6338C38.085 54.1495 40.9187 56.9998 44.415 57C47.9115 57 50.7461 54.1497 50.7461 50.6338C50.7461 48.7573 49.9389 47.0704 48.6543 45.9053L56.7217 23.7314C60.1939 23.703 62.9999 20.8644 63 17.3662C63 16.9016 62.9485 16.449 62.8545 16.0127Z" fill="#3D8428"/>
+                <path d="M34 0C44.2981 0 53.5257 4.57925 59.7607 11.8115C58.8462 11.2957 57.7921 11 56.6689 11C53.1725 11 50.3379 13.8503 50.3379 17.3662C50.3379 19.4362 51.3211 21.2749 52.8428 22.4375L44.8945 44.2852C44.7365 44.2733 44.5761 44.2676 44.415 44.2676C43.8872 44.2676 43.374 44.3336 42.8838 44.4561L28.5586 21.3047C29.4083 20.2211 29.915 18.8532 29.915 17.3662C29.915 13.8505 27.0813 11.0002 23.585 11C20.0885 11 17.2539 13.8503 17.2539 17.3662C17.254 19.4363 18.2369 21.2749 19.7588 22.4375L11.8096 44.2852C11.6516 44.2733 11.492 44.2676 11.3311 44.2676C7.83459 44.2676 5.00008 47.118 5 50.6338C5 51.098 5.05072 51.5504 5.14453 51.9863C1.88547 46.7689 0 40.605 0 34C0 15.2223 15.2223 0 34 0Z" fill="#D4C800"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dl-row">
+      <span class="dl-label" style="width:100%">Download NYMRANK Avatar + Logo</span>
+      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/NYMRANK.zip')">Dark SVG + PNG Pack.zip</button>
+      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/NYMRANK.zip')">Light SVG + PNG Pack.zip</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 09 COLOR ══════════ -->
 <section id="color">
   <div class="page">
-    <div class="chapter"><span class="ch-num">07 -</span><div><span class="section-tag">Color System</span><h2>Palette</h2></div></div>
+    <div class="chapter"><span class="ch-num">09 -</span><div><span class="section-tag">Color System</span><h2>Palette</h2></div></div>
     <div class="rule"></div>
     <p style="max-width:620px;margin-bottom:36px">Each product has a designated color identity that adapts between themes. The split swatches below always show both: <strong style="color:var(--text)">left half = dark theme</strong>, <strong style="color:var(--text)">right half = light theme</strong>. The live panel at the bottom shows only the currently active theme's values.</p>
     <div class="callout"><span class="callout-icon">⚡</span><div><h6>Product colors are theme-specific — never interchangeable</h6><p>Dark values are calibrated for luminosity on dark surfaces. Light values are adjusted for legibility and reduced glare on white backgrounds. Using dark values on light backgrounds or vice versa violates brand guidelines.</p></div></div>
@@ -844,10 +948,10 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
   </div>
 </section>
 
-<!-- ══════════ 08 TYPOGRAPHY ══════════ -->
+<!-- ══════════ 10 TYPOGRAPHY ══════════ -->
 <section id="type">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">08 - STYLE</span><h2>Typography & Fonts</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">10 - STYLE</span><h2>Typography & Fonts</h2></div></div>
 
     <div class="rule"></div>
     <p style="max-width:580px;margin-bottom:36px">Three typefaces form the system. DM Mono anchors all display and heading usage. Inter handles all interface copy. DM Mono handles supporting and technical text. All three are free and open-source.</p>
@@ -890,10 +994,10 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
   </div>
 </section>
 
-<!-- ══════════ 09 COMPONENTS ══════════ -->
+<!-- ══════════ 11 COMPONENTS ══════════ -->
 <section id="components">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">09 - STYLE</span><h2>Ui Components</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">11 - STYLE</span><h2>Ui Components</h2></div></div>
 
     <div class="rule"></div>
     <h4 style="margin-bottom:8px">Surface Shape</h4>
@@ -941,10 +1045,10 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 </section>
 
 
-<!-- ══════════ 10 ICONS ══════════ -->
+<!-- ══════════ 12 ICONS ══════════ -->
 <section id="icons">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">10 - STYLE</span><h2>Icons Libraries</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">12 - STYLE</span><h2>Icons Libraries</h2></div></div>
 
     <div class="rule"></div>
     <p style="max-width:620px;margin-bottom:36px">SHOCKNET and all its products use <strong style="color:var(--text)">Ionicons</strong> as the primary icon library — open-source, MIT-licensed, and available as a web component or SVG. Supplementary sets may be used when a specific glyph is unavailable, provided they follow the same weight and optical sizing guidelines.</p>
@@ -1241,7 +1345,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
   </div>
 </div>
 
-    <!--- BXTR >
+    <!-- BXTR -->
     <div class="card" style="margin-bottom:14px">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
         <div style="width:3px;height:20px;background:linear-gradient(180deg,var(--lp-a),var(--lp-b));border-radius:2px"></div>
@@ -1261,7 +1365,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
         <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 6px;border-radius:8px;transition:background .15s" onmouseenter="this.style.background='color-mix(in srgb,var(--lp-a) 10%,transparent)'" onmouseleave="this.style.background='transparent'"><ion-icon name="images-outline"           style="font-size:22px;color:var(--lp-a)"></ion-icon><span style="font-family:'DM Mono',monospace;font-size:8px;color:var(--text-dim);text-align:center;letter-spacing:.04em;line-height:1.3">media</span></div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 6px;border-radius:8px;transition:background .15s" onmouseenter="this.style.background='color-mix(in srgb,var(--lp-a) 10%,transparent)'" onmouseleave="this.style.background='transparent'"><ion-icon name="alert-outline"            style="font-size:22px;color:var(--lp-a)"></ion-icon><span style="font-family:'DM Mono',monospace;font-size:8px;color:var(--text-dim);text-align:center;letter-spacing:.04em;line-height:1.3">report</span></div>
       </div>
-    </div -->
+    </div>
 
     <!-- LIGHTNING.video -->
     <div class="card" style="margin-bottom:14px">
@@ -1364,13 +1468,13 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 </section>
  
  
-<!-- ━━━━━━━━━━━━━━━  SPACING & GRID ━━━━━━━━━━━━━━━━ -->
+<!-- ━━━━━━━━━━━━━━━  13 SPACING & GRID ━━━━━━━━━━━━━━━━ -->
 <section id="spacing">
   <div class="page">
   <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px">
     <div class="product-bar" style="background:var(--text-dim)"></div>
     <div>
-      <span class="section-tag">11 - GUIDELINES</span>
+      <span class="section-tag">13 - GUIDELINES</span>
       <h2>Spacing & Layout Grid</h2>
     </div>
   </div>
@@ -1498,10 +1602,10 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 </section>
  
  
-<!-- ━━━━━━━━━━━━━━━━━━━ BRAND VOICE & TONE ━━━━━━━━━━━━━━━━━━━━ -->
+<!-- ━━━━━━━━━━━━━━━━━━━ 14 BRAND VOICE & TONE ━━━━━━━━━━━━━━━━━━━━ -->
 <section id="voice">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">12 - GUIDELINES</span><h2>Comms Voice & Tone</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">14 - GUIDELINES</span><h2>Comms Voice & Tone</h2></div></div>
 
     <div class="rule"></div>
 
@@ -1614,10 +1718,10 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 </section>
  
  
-<!-- ━━━━━━━━━━━━━━━━━━━  DIGITAL SURFACES  ━━━━━━━━━━━━━━━━━━━ -->
+<!-- ━━━━━━━━━━━━━━━━━━━  15 DIGITAL SURFACES  ━━━━━━━━━━━━━━━━━━━ -->
 <section id="surfaces">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">13 - GUIDELINES</span><h2>Digital Surfaces</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">15 - GUIDELINES</span><h2>Digital Surfaces</h2></div></div>
 
     <div class="rule"></div>
 
@@ -1697,10 +1801,10 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 </section>
  
  
-<!-- ━━━━━━━━━━  CO-BRANDING  ━━━━━━━━━━━━━━━━ -->
+<!-- ━━━━━━━━━━  16 CO-BRANDING  ━━━━━━━━━━━━━━━━ -->
 <section id="cobranding">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">14 - GUIDELINES</span><h2>Co-Branding</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">16 - GUIDELINES</span><h2>Co-Branding</h2></div></div>
 
     <div class="rule"></div>
     <p style="max-width:620px;margin-bottom:36px">When SHOCKNET products appear alongside external brands, partner marks, or in third-party contexts, specific rules govern how the marks relate to each other — protecting both parties and maintaining brand clarity.</p>
