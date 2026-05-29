@@ -15,6 +15,6 @@ info@shock.network
 
 [X/@ShockBTC](https://x.com/ShockBTC)
 
-[Nostr](https://njump.to/npub1xvtwx6tduaxnn9v3y7uasskl277achgu0tu2qncmc7hdsz6y2zyqce64sa)
+[Nostr](https://bxrd.app/npub1xvtwx6tduaxnn9v3y7uasskl277achgu0tu2qncmc7hdsz6y2zyqce64sa)
 
 
