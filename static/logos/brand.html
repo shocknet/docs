@@ -9,6 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<link rel="icon" type="image/png" href="/favcon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="SHOCKNET" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
 <style>
 /* ═══ THEME TOKENS ═══ */
 :root,[data-theme="dark"]{
@@ -55,12 +61,12 @@ section:last-child{border-bottom:none}
 h1,h2,h3,h4,h5,h6{font-family: 'DM Mono', 'Courier New', monospace; line-height:1.15;color:var(--text);transition:color .25s}
 h1, h2, h3 {font-weight: 300 !important}
 h4, h5, h6 {font-weight: 400 !important}
-  h1 {font-size:42px; letter-spacing: -.042em}
-  h2 {font-size:36px; letter-spacing: -.021em}
-  h3 {font-size:24px; letter-spacing: -.014em}
-  h4 {font-size:21px; letter-spacing: -.007em}
-  h5 {font-size:18px; letter-spacing: .007em}
-  h6 {font-size:16px; letter-spacing: .042em; text-transform:uppercase;}
+  h1 {font-size:42px; letter-spacing: -.042em; line-height: 101%;}
+  h2 {font-size:36px; letter-spacing: -.021em; line-height: 106%;}
+  h3 {font-size:24px; letter-spacing: -.014em; line-height: 110%;}
+  h4 {font-size:21px; letter-spacing: -.007em; line-height: 115%;}
+  h5 {font-size:18px; letter-spacing: .007em; line-height: 117%;}
+  h6 {font-size:16px; letter-spacing: .042em; text-transform:uppercase;; line-height: 119%;}
 p{font-size:16px;color:var(--text-muted);line-height:1.75;transition:color .25s}
 .section-tag{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;display:block;transition:color .25s}
 .mono{font-family:'DM Mono',monospace;font-size:12px;color:var(--text-dim);letter-spacing:.05em;transition:color .25s}
@@ -405,8 +411,8 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
       <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/SHOCKNET.zip');"></span color="#111213">Light SVG + PNG Pack.zip</span></button>
       <button class="btn-sm btn-sn-sm" onclick="downloadSVG('shocknet','light')"></span color="#f1f1f1">Dark Logo.svg</button>
       <button class="btn-sm btn-sn-out" onclick="downloadSVG('shocknet','dark')">Light Logo.svg</button>
-      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/SHOCKNET/Avatars.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatars.zip</span></button>
-      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/SHOCKNET/Avatars.zip');"></span color="#111213">Light SVG + PNG Avatars.zip</span></button>
+      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/SHOCKNET/SN_Avatar.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatar.zip</span></button>
+      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/SHOCKNET/SN_Avatar.zip');"></span color="#111213">Light SVG + PNG Avatar.zip</span></button>
     </div>
   </div>
 
@@ -558,8 +564,8 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
       <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/SHOCKWALLET.zip');"></span color="#111213">Light SVG + PNG Pack.zip</span></button>
       <button class="btn-sm btn-sn-sm" onclick="downloadSVG('shockwallet','light')"></span color="#f1f1f1">Dark Logo.svg</button>
       <button class="btn-sm btn-sn-out" onclick="downloadSVG('shockwallet','dark')">Light Logo.svg</button>
-      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/SHOCKWALLET/Avatars.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatars.zip</span></button>
-      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/SHOCKWALLET/Avatars.zip');"></span color="#111213">Light SVG + PNG Avatars.zip</span></button>
+      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/SHOCKWALLET/SW_Avatar.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatar.zip</span></button>
+      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/SHOCKWALLET/SW_Avatar.zip');"></span color="#111213">Light SVG + PNG Avatar.zip</span></button>
     </div>
   </div>
 </section>
@@ -620,8 +626,8 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
       <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/LIGHTNING.pub.zip');"></span color="#111213">Light SVG + PNG Pack.zip</span></button>
       <button class="btn-sm btn-sn-sm" onclick="downloadSVG('lnpub','light')"></span color="#f1f1f1">Dark Logo.svg</button>
       <button class="btn-sm btn-sn-out" onclick="downloadSVG('lnpub','dark')">Light Logo.svg</button>
-      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/LIGHTNING.pub/Avatars.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatars.zip</span></button>
-      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/LIGHTNING.pub/Avatars.zip');"></span color="#111213">Light SVG + PNG Avatars.zip</span></button>
+      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/LIGHTNING.pub/LP_Avatar.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatar.zip</span></button>
+      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/LIGHTNING.pub/LP_Avatar.zip');"></span color="#111213">Light SVG + PNG Avatar.zip</span></button>
     </div>
   </div>
 </section>
@@ -709,8 +715,8 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
       <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/LN.video.zip');"></span color="#111213">Light SVG + PNG Pack.zip</span></button>
       <button class="btn-sm btn-sn-sm" onclick="downloadSVG('lnvideo','light')"></span color="#f1f1f1">Dark Logo.svg</button>
       <button class="btn-sm btn-sn-out" onclick="downloadSVG('lnvideo','dark')">Light Logo.svg</button>
-      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/LN.video/Avatars.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatars.zip</span></button>
-      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/LN.video/Avatars.zip');"></span color="#111213">Light SVG + PNG Avatars.zip</span></button>
+      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/LN.video/LV_Avatar.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatar.zip</span></button>
+      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/LN.video/LV_Avatar.zip');"></span color="#111213">Light SVG + PNG Avatar.zip</span></button>
     </div>
   </div>
 </section>
@@ -808,8 +814,8 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
       <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/SANCTUM.zip');"></span color="#111213">Light SVG + PNG Pack.zip</span></button>
       <button class="btn-sm btn-sn-sm" onclick="downloadSVG('sanctum','light')"></span color="#f1f1f1">Dark Logo.svg</button>
       <button class="btn-sm btn-sn-out" onclick="downloadSVG('sanctum','dark')">Light Logo.svg</button>
-      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/SANCTUM/Avatars.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatars.zip</span></button>
-      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/SANCTUM/Avatars.zip');"></span color="#111213">Light SVG + PNG Avatars.zip</span></button>
+      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/SANCTUM/ST_Avatar.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatar.zip</span></button>
+      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/SANCTUM/ST_Avatar.zip');"></span color="#111213">Light SVG + PNG Avatar.zip</span></button>
     </div>
 
 

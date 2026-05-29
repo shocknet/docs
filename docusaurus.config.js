@@ -9,8 +9,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Shock Docs',
-  tagline: 'Guides and information for ShockWallet, Lightning.Video, Lightning.Pub, and Sanctum Auth', 
-  favicon: 'img/logo.png',
+  tagline: 'Guides and information for SHOCKWALLET, LIGHTNING.pub, LN.video, SANCTUM & CLINK', 
+  favicon: '/favicon/favicon.png',
 
   // Set the production url of your site here
   url: 'https://docs.shock.network',
@@ -51,6 +51,7 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+
       }),
     ],
   ],
@@ -58,13 +59,21 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+
+   colorMode: {
+    defaultMode:              'dark',
+    disableSwitch:            false,   // keep the toggle visible
+    respectPrefersColorScheme: true,   // honor OS dark/light preference
+  },
+
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'SHOCKNET',
+        title: 'DOCS → ',
         logo: {
-          alt: 'Shocknet Logo',
-          src: 'img/logo.png',
+          alt: 'SHOCKNET Logo',
+          src: '/logos/Light/SHOCKNET/SHOCKNET.png',
+          srcDark: '/logos/Dark/SHOCKNET/SHOCKNET.png',
         },
         items: [
                     {
@@ -77,65 +86,72 @@ const config = {
             type: 'doc',
             docId: 'wallet/intro',
             position: 'left',
-            label: 'ShockWallet',
+            label: 'SHOCKWALLET',
           },
           {
             type: 'doc',
             docId: 'pub/intro',
             position: 'left',
-            label: 'Lightning.Pub',
+            label: 'LIGHTNING.pub',
           },
           {
             type: 'doc',
             docId: 'video/intro',
             position: 'left',
-            label: 'Lightning.Video',
+            label: 'LN.video',
           },
           {
             type: 'doc',
             docId: 'sanctum/intro',
             position: 'left',
-            label: 'Sanctum',
+            label: 'SANCTUM',
+          },
+          {
+            href: 'https://t.me/shockbtc',
+            label: 'T',
+            position: 'right',
+          },
+          {
+            href: 'https://njump.to/nprofile1qqsrx9hrd9k7wnfejkgj0wwcgt0400wut5w8479qfudu0tkcpdz9pzqfwq5xw',
+            label: 'N',
+            position: 'right',
           },
           {
             href: 'https://github.com/shocknet',
-            label: 'GitHub',
+            label: 'G',
+            position: 'right',
+          },
+          {
+            href: 'https://x.com/shockbtc',
+            label: 'X',
             position: 'right',
           },
         ],
       },
 
-      footer: {
-  style: 'dark',
+footer: {
   links: [
     {
-      title: 'Community',
+      title: 'Products',
       items: [
-        {
-          label: 'Telegram',
-          href: 'https://t.me/shockbtc',
-        },
-        {
-          label: 'Lightning Video',
-          href: 'https://lightning.video/thecto',
-        },
-        {
-          label: 'Twitter',
-          href: 'https://twitter.com/shockbtc',
-        },
+        { label: 'SHOCKWALLET', href: 'https://shockwallet.app' },
+        { label: 'LIGHTNING.pub', href: 'https://lightning.pub' },
+        { label: 'LN.video', href: 'https://lightning.video' },
+        { label: 'SANCTUM', href: 'https://sanctum.app' },
+        { label: 'CLINK', href: 'https://clink.cool' },
       ],
     },
     {
-      title: 'More',
+      title: 'Resources',
       items: [
-        {
-          label: 'GitHub',
-          href: 'https://github.com/shocknet/',
-        },
+        { label: 'Telegram', href: 'https://t.me/shockbtc' },
+        { label: 'Nostr', href: 'https://njump.to/nprofile1qqsrx9hrd9k7wnfejkgj0wwcgt0400wut5w8479qfudu0tkcpdz9pzqfwq5xw' },
+        { label: 'GitHub', href: 'https://github.com/SHOCKNET' },
+        { label: 'X', href: 'https://x.com/shockbtc' },
       ],
     },
   ],
-  copyright: `Copyright © ${new Date().getFullYear()} Shock Network, Inc. Built with Docusaurus.`,
+  copyright: `<small><code> · © ${new Date().getFullYear()} SHOCKNET · All rights reserved · </code></small>`,
 },
       prism: {
         theme: prismThemes.github,

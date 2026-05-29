@@ -3,14 +3,13 @@ sidebar_position: 1
 slug: /
 ---
 
-# About
+# The open platform 
+# for Lightning + Nostr apps
 
-Hi,
+[SHOCKNET](https://shock.network) is a free and open source (FOSS) set of tools built as bridge between the Bitcoin Lightning Network and Nostr ecosystem. Each of our products is designed to make simple interactions faster, more private, and user-controlled. We brings together a suite of products that work in harmony to reshape your digital experience. 
 
-We’re shocknet and we make open-source, decentralized apps for the Bitcoin Lightning Network, using Nostr.
+At its core is [SHOCKWALLET](https://SHOCKwallet.app), a non-custodial Lightning wallet that blends seamless Bitcoin payments with social connectivity, ensuring users retain full control of both funds and identity. This spirit of empowerment extends to [LIGHTNING.pub](https://lightning.pub), a censorship-resistant publishing platform where creators can share and monetize their work directly through Lightning payments. 
 
-We also provide hosting services to use them with, like a CDN(Content Delivery Network) for sharing video, and professional relays for Nostr.
+Complementing it, [LN.video](https://lnvideo) enables peer-to-peer video hosting and monetization without relying on centralized platforms. [SANCTUM](https://auth.shock.network) acts as the network’s privacy and identity hub, providing secure data management and authentication across SHOCKNET’s services. Completing the ecosystem, [CLINK](https://clinkme.dev) serves as a Lightning-native communication protocol that allows encrypted, low-latency messaging and social interaction. 
 
-By using our services, you’ll help us to keep improving the software to build a powerful Bitcoin circular economy. We look forward to serving you!
-
--The Shock Team
+Together, these components form a cohesive, open network that unites payments, publishing, media, and communication in a single decentralized experience. Explore the documentation to discover how we are redefining the social and financial fabric of sovereign individals and private organizations. 

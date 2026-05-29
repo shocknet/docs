@@ -1,40 +1,775 @@
-/* Import Montserrat Font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * ═══════════════════════════════════════════════════════════════════════════
+ *  SHOCKNET — Docusaurus Theme
+ *  src/css/custom.css
+ *  v1.0 · 2026
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ *  This file overrides Infima (Docusaurus' CSS framework) with the SHOCKNET
+ *  brand design system. It covers both dark and light modes.
+ *
+ *  FONTS are loaded via docusaurus.config.js → stylesheets[] (see guide).
+ *  Do not @import fonts here — it blocks rendering.
+ *
+ *  STRUCTURE
+ *  ─────────────────────────────────────────────────────────────────────────
+ *  01  Primary Color Palette       (Infima 7-shade system)
+ *  02  Dark Mode Overrides
+ *  03  Background & Surface
+ *  04  Typography
+ *  05  Heading Styles              (exact brand-manual tracking)
+ *  06  Navigation Bar
+ *  07  Sidebar / Menu
+ *  08  Table of Contents
+ *  09  Content Area
+ *  10  Code Blocks
+ *  11  Admonitions / Callouts
+ *  12  Footer
+ *  13  Buttons & Badges
+ *  14  Tables
+ *  15  Pagination
+ *  16  Search
+ *  17  Scrollbar
+ *  18  SHOCKNET Custom Components  (.sn-pill, .sn-badge, product colors)
+ * ═══════════════════════════════════════════════════════════════════════════
  */
 
-/* Apply Montserrat to the entire website */
-body {
-  font-family: 'Montserrat', sans-serif;
-}
 
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  01  PRIMARY COLOR PALETTE — LIGHT MODE  (:root)
+ *
+ *  Primary = SHOCKWALLET Blue #2E6DCE (best contrast on white backgrounds)
+ *  7 Infima shades required — generated from base color.
+ * ═══════════════════════════════════════════════════════════════════════════ */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2aabe1;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* ── Primary: SHOCKWALLET Blue — high contrast on white ─────────────── */
+  --ifm-color-primary:          #2E6DCE;
+  --ifm-color-primary-dark:     #2862b9;
+  --ifm-color-primary-darker:   #2559a8;
+  --ifm-color-primary-darkest:  #1e498a;
+  --ifm-color-primary-light:    #3d7ad4;
+  --ifm-color-primary-lighter:  #5088d9;
+  --ifm-color-primary-lightest: #79a3e3;
+
+  /* ── Product accent vars (raw — use anywhere in docs MDX/JSX) ────────── */
+  --sn-cyan:    #4FD6F0;
+  --sn-blue:    #2E6DCE;
+  --sn-orange:  #FF9900;
+  --sn-magenta: #D75AD7;
+  --sn-red:     #FF3366;
+  --sn-yellow:  #F0E91A;
+  --sn-violet:  #8A6BE5;
+  --sn-green:   #4FD27A;
+
+  /* ── Global spacing & radius ─────────────────────────────────────────── */
+  --ifm-global-radius:          10px;
+  --ifm-global-spacing:         16px;
+
+  /* ── Code ────────────────────────────────────────────────────────────── */
+  --ifm-code-font-size:         90%;
+  --ifm-code-border-radius:     5px;
+  --ifm-code-background:        #F0F0ED;
+
+  /* ── Transitions ─────────────────────────────────────────────────────── */
+  --ifm-transition-fast:        150ms;
+  --ifm-transition-slow:        400ms;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #2aabe1;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  02  DARK MODE OVERRIDES  (html[data-theme='dark'])
+ *
+ *  Primary = SHOCKNET Cyan #1BCFE0 — vivid on dark, meets contrast AA.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+html[data-theme='dark'] {
+
+  /* ── Primary: Cyan ───────────────────────────────────────────────────── */
+  --ifm-color-primary:          #1BCFE0;
+  --ifm-color-primary-dark:     #18b9c9;
+  --ifm-color-primary-darker:   #16aeba;
+  --ifm-color-primary-darkest:  #118f98;
+  --ifm-color-primary-light:    #33d5e4;
+  --ifm-color-primary-lighter:  #4fdce9;
+  --ifm-color-primary-lightest: #7be7f0;
+
+  /* ── Product accent vars (dark theme values) ─────────────────────────── */
+  --sn-cyan:    #1BCFE0;
+  --sn-blue:    #3A7BFF;
+  --sn-orange:  #FF8A00;
+  --sn-magenta: #F040F5;
+  --sn-red:     #FF0050;
+  --sn-yellow:  #F7FF00;
+  --sn-violet:  #9B63FF;
+  --sn-green:   #25E673;
 }
 
-html[data-theme='dark'] body {
-  background-color: #16191c;
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  03  BACKGROUND & SURFACE
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Light mode */
+:root {
+  --ifm-background-color:         #F2F2EF;   /* Shell — off-white                */
+  --ifm-background-surface-color: #FFFFFF;
+  --ifm-color-emphasis-0:         #FFFFFF;
+  --ifm-color-emphasis-100:       #F2F2EF;
+  --ifm-color-emphasis-200:       #E8E8E5;
+  --ifm-color-emphasis-300:       #D0D0CC;
+  --ifm-color-emphasis-400:       #B0B0AA;
+  --ifm-color-emphasis-600:       #777770;
+  --ifm-color-emphasis-700:       #555550;
+  --ifm-color-emphasis-800:       #333330;
+  --ifm-color-emphasis-900:       #111213;
+  --ifm-color-emphasis-1000:      #000000;
+  --ifm-hr-border-color:          #D0D0CC;
+  --ifm-toc-border-color:         #D0D0CC;
+}
+
+/* Dark mode */
+html[data-theme='dark'] {
+  --ifm-background-color:         #111213;   /* Night                            */
+  --ifm-background-surface-color: #212325;   /* Coal                             */
+  --ifm-color-emphasis-0:         #111213;
+  --ifm-color-emphasis-100:       #1A1B1C;
+  --ifm-color-emphasis-200:       #212325;
+  --ifm-color-emphasis-300:       #2C2E30;
+  --ifm-color-emphasis-400:       #3C3C3C;   /* Graphene                         */
+  --ifm-color-emphasis-600:       #505050;
+  --ifm-color-emphasis-700:       #8A8A8A;   /* Dust                             */
+  --ifm-color-emphasis-800:       #C0C0C0;
+  --ifm-color-emphasis-900:       #F1F1F1;   /* Ice                              */
+  --ifm-color-emphasis-1000:      #FFFFFF;
+  --ifm-hr-border-color:          #3C3C3C;
+  --ifm-toc-border-color:         #3C3C3C;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  04  TYPOGRAPHY — Font Families & Base Sizes
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  /* ── Font families ───────────────────────────────────────────────────── */
+  --ifm-font-family-base:       'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-monospace:  'DM Mono', 'Courier New', monospace;
+
+  /* ── Heading font — DM Mono as per brand manual ──────────────────────── */
+  --ifm-heading-font-family:    'DM Mono', 'Courier New', monospace;
+  --ifm-heading-font-weight:    400;   /* overridden per-level below        */
+  --ifm-heading-line-height:    1.15;
+  --ifm-heading-color:          var(--ifm-font-color-base);
+
+  /* ── Base sizes ──────────────────────────────────────────────────────── */
+  --ifm-font-size-base:         16px;
+  --ifm-line-height-base:       1.75;
+
+  /* ── Font colors ─────────────────────────────────────────────────────── */
+  --ifm-font-color-base:        #111213;
+  --ifm-font-color-secondary:   #555555;
 }
 
 html[data-theme='dark'] {
-  --ifm-background-surface-color: #16191c;
-  --ifm-background-color: #16191c;
+  --ifm-font-color-base:        #F1F1F1;
+  --ifm-font-color-secondary:   #8A8A8A;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  05  HEADING STYLES
+ *
+ *  Brand manual spec (exact):
+ *  H1  42px  weight 300  tracking −0.042em
+ *  H2  36px  weight 300  tracking −0.021em
+ *  H3  24px  weight 300  tracking −0.014em
+ *  H4  21px  weight 400  tracking −0.007em
+ *  H5  18px  weight 400  tracking +0.007em
+ *  H6  16px  weight 400  tracking +0.042em + ALLCAPS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+
+h1, .markdown h1 {
+  font-size:      42px;
+  font-weight:    300;
+  letter-spacing: -0.042em;
+}
+h2, .markdown h2 {
+  font-size:      36px;
+  font-weight:    300;
+  letter-spacing: -0.021em;
+}
+h3, .markdown h3 {
+  font-size:      24px;
+  font-weight:    300;
+  letter-spacing: -0.014em;
+}
+h4, .markdown h4 {
+  font-size:      21px;
+  font-weight:    400;
+  letter-spacing: -0.007em;
+}
+h5, .markdown h5 {
+  font-size:      18px;
+  font-weight:    400;
+  letter-spacing:  0.007em;
+}
+h6, .markdown h6 {
+  font-size:      16px;
+  font-weight:    400;
+  letter-spacing:  0.042em;
+  text-transform: uppercase;
+}
+
+/* Anchor links next to headings */
+.hash-link { color: var(--ifm-color-primary); opacity: 0; }
+h1:hover .hash-link,
+h2:hover .hash-link,
+h3:hover .hash-link { opacity: 1; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  06  NAVIGATION BAR
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --ifm-navbar-background-color: rgba(242,242,239,0.94);
+  --ifm-navbar-shadow:           none;
+  --ifm-navbar-height:           60px;
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-link-color:       #555555;
+  --ifm-navbar-link-hover-color: #111213;
+  --ifm-navbar-link-active-color: #2E6DCE;
+}
+
+html[data-theme='dark'] {
+  --ifm-navbar-background-color: rgba(17,18,19,0.92);
+  --ifm-navbar-link-color:       #8A8A8A;
+  --ifm-navbar-link-hover-color: #F1F1F1;
+  --ifm-navbar-link-active-color: #1BCFE0;
+}
+
+.navbar {
+  backdrop-filter:          blur(16px);
+  -webkit-backdrop-filter:  blur(16px);
+  border-bottom:            1px solid var(--ifm-color-emphasis-300);
+}
+
+.navbar__brand {
+  font-family:    var(--ifm-heading-font-family);
+  font-weight:    300;
+  letter-spacing: 0.07em;
+  font-size:      18px;
+}
+
+.navbar__link {
+  font-family:    'DM Mono', monospace;
+  font-size:      12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight:    400;
+}
+
+/* Active nav item underline */
+.navbar__link--active,
+.navbar__link:hover {
+  text-decoration: none;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  07  SIDEBAR / MENU
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --ifm-menu-color:             #555555;
+  --ifm-menu-color-active:      #2E6DCE;
+  --ifm-menu-color-background-active:   color-mix(in srgb, #2E6DCE 10%, transparent);
+  --ifm-menu-color-background-hover:    color-mix(in srgb, #111213 5%,  transparent);
+  --ifm-menu-link-padding-horizontal:   12px;
+  --ifm-menu-link-padding-vertical:     6px;
+  --ifm-sidebar-width:                  280px;
+}
+
+html[data-theme='dark'] {
+  --ifm-menu-color:                     #8A8A8A;
+  --ifm-menu-color-active:              #1BCFE0;
+  --ifm-menu-color-background-active:   color-mix(in srgb, #1BCFE0 10%, transparent);
+  --ifm-menu-color-background-hover:    color-mix(in srgb, #F1F1F1 5%,  transparent);
+}
+
+/* Sidebar category labels */
+.menu__list-item-collapsible .menu__link {
+  font-family:    'DM Mono', monospace;
+  font-size:      10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          var(--ifm-color-emphasis-600);
+}
+
+.menu__link {
+  border-radius:  var(--ifm-global-radius);
+  font-size:      14px;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  border-left: 2px solid var(--ifm-color-primary);
+  padding-left: 10px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  08  TABLE OF CONTENTS (right rail)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.table-of-contents {
+  border-left: 1px solid var(--ifm-toc-border-color);
+  font-family: 'DM Mono', monospace;
+  font-size:   12px;
+  letter-spacing: 0.07em;
+}
+
+.table-of-contents__link {
+  color: var(--ifm-color-emphasis-600);
+  text-decoration: none;
+}
+
+.table-of-contents__link--active,
+.table-of-contents__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  09  CONTENT AREA
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.markdown p { line-height: 1.75; }
+
+/* Links */
+.markdown a {
+  color:           var(--ifm-color-primary);
+  text-decoration: none;
+}
+.markdown a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Horizontal rule */
+.markdown hr {
+  border-top: 1px solid var(--ifm-hr-border-color);
+}
+
+/* Blockquote */
+.markdown blockquote {
+  border-left:    3px solid var(--ifm-color-primary);
+  background:     color-mix(in srgb, var(--ifm-color-primary) 6%, transparent);
+  border-radius:  0 var(--ifm-global-radius) var(--ifm-global-radius) 0;
+  padding:        12px 20px;
+  margin:         16px 0;
+  color:          var(--ifm-font-color-secondary);
+  font-style:     normal;
+}
+
+/* Badges (--badge variants built-in to Infima) */
+.badge { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.12em; }
+
+/* Strong */
+.markdown strong { color: var(--ifm-font-color-base); }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  10  CODE BLOCKS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --ifm-code-background:  #EDEDE8;
+}
+html[data-theme='dark'] {
+  --ifm-code-background:  #1A1B1C;
+}
+
+/* Inline code */
+code {
+  font-family:    var(--ifm-font-family-monospace);
+  font-size:      var(--ifm-code-font-size);
+  border-radius:  var(--ifm-code-border-radius);
+  padding:        1px 5px;
+  background:     var(--ifm-code-background);
+  border:         1px solid var(--ifm-color-emphasis-300);
+}
+
+/* Fenced code block container */
+.codeBlockContainer {
+  border:        1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  overflow:      hidden;
+}
+
+/* Fenced code title bar */
+.codeBlockTitle {
+  font-family:    'DM Mono', monospace;
+  font-size:      10px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  background:     var(--ifm-color-emphasis-200);
+  padding:        8px 16px;
+  border-bottom:  1px solid var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .codeBlockTitle {
+  background: #1A1B1C;
+}
+
+/* Prism theme adjustment — dark */
+html[data-theme='dark'] .prism-code {
+  background: #0E0F10 !important;
+}
+html[data-theme='dark'] .codeBlock {
+  background: #0E0F10;
+}
+
+/* Prism theme adjustment — light */
+html[data-theme='light'] .prism-code {
+  background: #F5F5F2 !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  11  ADMONITIONS / CALLOUTS
+ *
+ *  Docusaurus maps admonition types: note, tip, info, caution, danger
+ *  We map them to SHOCKNET product colors where appropriate.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* note     → neutral (SHOCKNET grey)   */
+  --ifm-color-admonition-note-background:   color-mix(in srgb, #8A8A8A 8%,  transparent);
+  --ifm-color-admonition-note-icon:         #8A8A8A;
+  /* tip      → SANCTUM green             */
+  --ifm-color-admonition-tip-background:    color-mix(in srgb, var(--sn-green) 8%, transparent);
+  --ifm-color-admonition-tip-icon:          var(--sn-green);
+  /* info     → SHOCKWALLET cyan          */
+  --ifm-color-admonition-info-background:   color-mix(in srgb, var(--sn-cyan) 8%, transparent);
+  --ifm-color-admonition-info-icon:         var(--sn-cyan);
+  /* caution  → CLINK yellow              */
+  --ifm-color-admonition-caution-background: color-mix(in srgb, var(--sn-orange) 8%, transparent);
+  --ifm-color-admonition-caution-icon:       var(--sn-orange);
+  /* danger   → LIGHTNING.video red       */
+  --ifm-color-admonition-danger-background: color-mix(in srgb, var(--sn-red) 8%, transparent);
+  --ifm-color-admonition-danger-icon:       var(--sn-red);
+}
+
+.admonition {
+  border-radius: var(--ifm-global-radius);
+  border-left-width: 3px;
+}
+
+.admonition-heading h5 {
+  font-family:    'DM Mono', monospace;
+  font-size:      10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight:    400;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  12  FOOTER
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --ifm-footer-background-color:  #FFFFFF;
+  --ifm-footer-color:             #555555;
+  --ifm-footer-link-color:        #555555;
+  --ifm-footer-link-hover-color:  #111213;
+  --ifm-footer-title-color:       #111213;
+}
+
+html[data-theme='dark'] {
+  --ifm-footer-background-color:  #0E0F10;
+  --ifm-footer-color:             #8A8A8A;
+  --ifm-footer-link-color:        #8A8A8A;
+  --ifm-footer-link-hover-color:  #F1F1F1;
+  --ifm-footer-title-color:       #F1F1F1;
 }
 
 .footer {
-  background-color: #151D24
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.footer__title {
+  font-family:    'DM Mono', monospace;
+  font-size:      10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.footer__link-item {
+  font-size:   14px;
+  line-height: 1.8;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  13  BUTTONS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.button {
+  font-family:    'Inter', sans-serif;
+  font-weight:    500;
+  font-size:      16px;
+  letter-spacing: 0;
+  border-radius:  var(--ifm-global-radius);
+  height:         42px;
+  padding:        0 24px;
+  transition:     opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button--sm {
+  font-size:     12px;
+  height:        36px;
+  padding:       0 16px;
+  border-radius: 5px;
+}
+
+.button--primary {
+  background:   var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color:        #ffffff;
+}
+.button--primary:hover {
+  opacity: 0.88;
+  color:   #ffffff;
+}
+
+.button--secondary {
+  background:   transparent;
+  border:       1px solid var(--ifm-color-primary);
+  color:        var(--ifm-color-primary);
+}
+.button--secondary:hover { opacity: 0.88; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  14  TABLES
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.markdown table {
+  display:    block;
+  overflow-x: auto;
+  width:      100%;
+  border:     1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+.markdown table th {
+  font-family:    'DM Mono', monospace;
+  font-size:      10px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  background:     var(--ifm-color-emphasis-100);
+  border-bottom:  1px solid var(--ifm-color-emphasis-300);
+  padding:        10px 16px;
+  color:          var(--ifm-color-emphasis-700);
+}
+
+html[data-theme='dark'] .markdown table th {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.markdown table td {
+  padding:       12px 16px;
+  font-size:     14px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.markdown table tr:last-child td { border-bottom: none; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  15  PAGINATION
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.pagination-nav__link {
+  border:        1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  transition:    border-color 0.15s ease, background 0.15s ease;
+}
+.pagination-nav__link:hover {
+  border-color:  var(--ifm-color-primary);
+  background:    color-mix(in srgb, var(--ifm-color-primary) 5%, transparent);
+  text-decoration: none;
+}
+
+.pagination-nav__sublabel {
+  font-family:    'DM Mono', monospace;
+  font-size:      9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color:          var(--ifm-color-emphasis-600);
+}
+
+.pagination-nav__label {
+  font-family: 'DM Mono', monospace;
+  font-size:   16px;
+  font-weight: 300;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  16  SEARCH  (DocSearch / Algolia)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.DocSearch-Button {
+  border-radius:  var(--ifm-global-radius) !important;
+  font-family:    'DM Mono', monospace !important;
+  font-size:      10px !important;
+  letter-spacing: 0.10em !important;
+}
+
+:root {
+  --docsearch-primary-color:         var(--ifm-color-primary);
+  --docsearch-searchbox-background:  var(--ifm-color-emphasis-100);
+  --docsearch-modal-background:      var(--ifm-background-surface-color);
+  --docsearch-footer-background:     var(--ifm-background-color);
+  --docsearch-key-gradient:          linear-gradient(135deg, var(--ifm-color-emphasis-200), var(--ifm-color-emphasis-100));
+}
+
+html[data-theme='dark'] {
+  --docsearch-searchbox-background:  #1A1B1C;
+  --docsearch-modal-background:      #212325;
+  --docsearch-footer-background:     #111213;
+  --docsearch-hit-background:        #2C2E30;
+  --docsearch-text-color:            #F1F1F1;
+  --docsearch-muted-color:           #8A8A8A;
+  --docsearch-key-gradient:          linear-gradient(135deg, #3C3C3C, #2C2E30);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  17  SCROLLBAR  (dark mode — subtle custom scrollbar)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+html[data-theme='dark'] ::-webkit-scrollbar { width: 6px; height: 6px; }
+html[data-theme='dark'] ::-webkit-scrollbar-track { background: transparent; }
+html[data-theme='dark'] ::-webkit-scrollbar-thumb { background: #3C3C3C; border-radius: 3px; }
+html[data-theme='dark'] ::-webkit-scrollbar-thumb:hover { background: #505050; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ *  18  SHOCKNET CUSTOM COMPONENTS
+ *
+ *  Use these classes directly in .mdx files:
+ *
+ *  <span class="sn-pill sn-pill-sw">SHOCKWALLET</span>
+ *  <span class="sn-badge sn-badge-lv">LIVE</span>
+ *  <div class="sn-callout sn-callout-sa">…</div>
+ *
+ *  Product suffixes:  -sn  -sw  -lp  -lv  -cl  -sa
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Pills ──────────────────────────────────────────────────────────────── */
+.sn-pill {
+  display:        inline-flex;
+  align-items:    center;
+  padding:        3px 10px;
+  border-radius:  9999px;
+  font-family:    'DM Mono', monospace;
+  font-size:      10px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  line-height:    1;
+  font-weight:    400;
+}
+
+/* SHOCKNET */
+.sn-pill-sn { background: color-mix(in srgb, var(--ifm-color-emphasis-900) 10%, transparent); border: 1px solid var(--ifm-color-emphasis-400); color: var(--ifm-font-color-base); }
+/* SHOCKWALLET cyan */
+.sn-pill-sw { background: color-mix(in srgb, var(--sn-cyan) 14%, transparent); border: 1px solid var(--sn-cyan); color: var(--sn-cyan); }
+/* SHOCKWALLET blue */
+.sn-pill-sw2 { background: color-mix(in srgb, var(--sn-blue) 14%, transparent); border: 1px solid var(--sn-blue); color: var(--sn-blue); }
+/* LIGHTNING.pub */
+.sn-pill-lp { background: color-mix(in srgb, var(--sn-orange) 14%, transparent); border: 1px solid var(--sn-orange); color: var(--sn-orange); }
+.sn-pill-lp2 { background: color-mix(in srgb, var(--sn-magenta) 14%, transparent); border: 1px solid var(--sn-magenta); color: var(--sn-magenta); }
+/* LIGHTNING.video */
+.sn-pill-lv { background: color-mix(in srgb, var(--sn-red) 14%, transparent); border: 1px solid var(--sn-red); color: var(--sn-red); }
+/* CLINK */
+.sn-pill-cl { background: color-mix(in srgb, var(--sn-violet) 14%, transparent); border: 1px solid var(--sn-violet); color: var(--sn-violet); }
+/* SANCTUM */
+.sn-pill-sa { background: color-mix(in srgb, var(--sn-green) 14%, transparent); border: 1px solid var(--sn-green); color: var(--sn-green); }
+
+/* ── Product callout boxes ───────────────────────────────────────────────── */
+.sn-callout {
+  display:       flex;
+  align-items:   flex-start;
+  gap:           14px;
+  padding:       18px 22px;
+  border-radius: var(--ifm-global-radius);
+  margin:        20px 0;
+  border-left:   3px solid;
+}
+
+.sn-callout-sw  { background: color-mix(in srgb, var(--sn-cyan)    7%, transparent); border-color: var(--sn-cyan); }
+.sn-callout-lp  { background: color-mix(in srgb, var(--sn-orange)  7%, transparent); border-color: var(--sn-orange); }
+.sn-callout-lv  { background: color-mix(in srgb, var(--sn-red)     7%, transparent); border-color: var(--sn-red); }
+.sn-callout-cl  { background: color-mix(in srgb, var(--sn-violet)  7%, transparent); border-color: var(--sn-violet); }
+.sn-callout-sa  { background: color-mix(in srgb, var(--sn-green)   7%, transparent); border-color: var(--sn-green); }
+
+/* ── Section tag / eyebrow ─────────────────────────────────────────────── */
+.sn-eyebrow {
+  display:        block;
+  font-family:    'DM Mono', monospace;
+  font-size:      10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color:          var(--ifm-color-emphasis-600);
+  margin-bottom:  10px;
+}
+
+/* ── Product color rule (thin left border accent) ──────────────────────── */
+.sn-product-bar {
+  display:       inline-block;
+  width:         4px;
+  height:        44px;
+  border-radius: 2px;
+  margin-right:  16px;
+  vertical-align: middle;
+  flex-shrink:   0;
+}
+.sn-product-bar-sw  { background: linear-gradient(180deg, var(--sn-cyan), var(--sn-blue)); }
+.sn-product-bar-lp  { background: linear-gradient(180deg, var(--sn-orange), var(--sn-magenta)); }
+.sn-product-bar-lv  { background: var(--sn-red); }
+.sn-product-bar-cl  { background: linear-gradient(180deg, var(--sn-yellow), var(--sn-violet)); }
+.sn-product-bar-sa  { background: var(--sn-green); }
+
+/* ── Spec row (key/value definition tables in MDX) ──────────────────────── */
+.sn-spec-row {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  padding:         10px 0;
+  border-bottom:   1px solid var(--ifm-color-emphasis-300);
+  font-size:       14px;
+}
+.sn-spec-row:last-child { border-bottom: none; }
+.sn-spec-key {
+  font-family:    'DM Mono', monospace;
+  font-size:      10px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color:          var(--ifm-color-emphasis-600);
+}
+.sn-spec-val {
+  font-family: 'DM Mono', monospace;
+  font-size:   10px;
+  color:       var(--ifm-font-color-base);
 }

@@ -5,9 +5,10 @@ Everything you need to cover SHOCKNET: offical social accounts, boilerplate copy
 
 ## SHOCKNET Social Accounts
 
+- `Telegram` https://t.me/shockbtc
 - `Nostr` https://njump.to/npub1xvtwx6tduaxnn9v3y7uasskl277achgu0tu2qncmc7hdsz6y2zyqce64sa
+- `GitHub` https://github.com/SHOCKNET
 - `X` https://x.com/shockbtc
-- `GH` https://github.com/SHOCKNET
 
 ## Company Boilerplate
 These approved copy blocks are cleared for use in press releases, articles, podcasts, and editorial coverage. Please use them verbatim and do not modify. Three lengths are provided to fit your editorial format.
@@ -34,23 +35,11 @@ SHOCKNET is backed by Fulgur Ventures (pre-seed) and the Wolf NYC Lightning Acce
 ```
 
 
-## Shock Product Descriptions
+## SHOCKNET Products Descriptions
 Approved editorial description. Each block includes copy cleared for press use, a one-line description for lists and tables, and relevant URLs.
 
 
-### Lightning.Pub
-Bitcoin Bank: <small>[Lightning.pub](https://Lightning.pub) · [github.com/SHOCKNET/Lightning.Pub](https://github.com/SHOCKNET/Lightning.Pub)</small>
-
-**One-line:** Share your node Bitcoin node, make it a Lightning Bank. Connect your community via Nostr.
-
-`Node Middleware` - `Nostr-Native` - `Open Source`
-```
-Lightning.Pub is an open-source, Nostr-native Lightning node daemon that turns any server, Raspberry Pi, NUC, or VPS into a shared Lightning node — no port forwarding, no TLS configuration, and no Bitcoin full node required.
-
-Rather than exposing node APIs directly, Lightning.Pub uses Nostr relays as its communication layer, meaning the node operator never needs to open firewall ports or manage SSL certificates. Multiple users can share a single node through Lightning.Pub's multi-layer account system, enabling "Uncle Jim" operators to offer Lightning services to family, friends, or customers with full non-custodial guarantees.
-```
-
-### ShockWallet
+### SHOCKWALLET
 Bitcoin Daily Spending: <small>[ShockWallet.app](https://shockwallet.app) · [github.com/SHOCKNET/wallet2](https://github.com/SHOCKNET/wallet2)</small>
 
 **One-line:** The non-custodial Bitcoin Lightning wallet for friends, family, and business.
@@ -62,39 +51,51 @@ ShockWallet is a non-custodial Lightning wallet that connects to a self-hosted L
 Users can connect to their own Lightning.Pub node or to a trusted node run by someone they know — giving them full key ownership with the convenience of a custodial app. ShockWallet supports LNURL, Lightning Addresses, NIP05-backed Lightning Addresses, and standard on-chain Bitcoin transactions.
 ```
 
-### Lightning.Video
+### LIGHTNING.pub
+Bitcoin Bank: <small>[Lightning.pub](https://Lightning.pub) · [github.com/SHOCKNET/Lightning.Pub](https://github.com/SHOCKNET/Lightning.Pub)</small>
+
+**One-line:** Share your node Bitcoin node, make it a Lightning Bank. Connect your community via Nostr.
+
+`Node Middleware` - `Nostr-Native` - `Open Source`
+```
+LIGHTNING.pub is an open-source, Nostr-native Lightning node daemon that turns any server, Raspberry Pi, NUC, or VPS into a shared Lightning node — no port forwarding, no TLS configuration, and no Bitcoin full node required.
+
+Rather than exposing node APIs directly, LIGHTNING.pub uses Nostr relays as its communication layer, meaning the node operator never needs to open firewall ports or manage SSL certificates. Multiple users can share a single node through Lightning.Pub's multi-layer account system, enabling "Uncle Jim" operators to offer Lightning services to family, friends, or customers with full non-custodial guarantees.
+```
+
+### LN.video
 Monetize Video with Bitcoin: <small>[LN.video](https://ln.video) · [github.com/SHOCKNET/ClinkSDK](https://github.com/SHOCKNET/ClinkSDK)</small>
 
 **One-line:** Watch your favorite videos, zap your favorite vloggers, upload exclusive videos and share them with your community to turn your contents into a creative business.
 
 `Video Platform` - `Pay per View` - `Paywall` - `Micropayments`
 ```
-Lightning.Video is a decentralized video platform powered by the Bitcoin Lightning Network and WebTorrent. Creators upload directly and set their own prices — from free to per-view micropayments — with every payment going directly to the creator's Lightning wallet, with no intermediary taking a cut.
+LIGHTNING.video is a decentralized video platform powered by the Bitcoin Lightning Network and WebTorrent. Creators upload directly and set their own prices — from free to per-view micropayments — with every payment going directly to the creator's Lightning wallet, with no intermediary taking a cut.
 
-The platform requires no account to browse, no email to sign up, and no advertiser relationships. Creators retain full control of their content and monetization strategy. Lightning.Video launched publicly in September 2022 and recorded a greater than 1000% month-over-month increase in user-generated revenues in June 2023.
+The platform requires no account to browse, no email to sign up, and no advertiser relationships. Creators retain full control of their content and monetization strategy. LN.Video launched publicly in September 2022 and recorded a greater than 1000% month-over-month increase in user-generated revenues in June 2023.
 ```
 
-### Sanctum Auth
+### SANCTUM
 Authentication layer: <small>[auth.shcok.network](https://auth.shcok.network) · [github.com/SHOCKNET/sanctum-client](https://github.com/SHOCKNET/sanctum-client)</small>
 
 **One-line:** Nostr passwordless authentication and identity management for teams and power users.
 
 `DigitalID` - `Auth` - `Nostr-Native` - `Passwordless`
 ```
-Sanctum is SHOCKNET's Nostr-native authentication layer that unlocks bridging to legacy auth like email, delegation without key divulsion and enabling applications to offer passwordless login flows without.
+SANCTUM is SHOCKNET's Nostr-native authentication layer that unlocks bridging to legacy auth like email, delegation without key divulsion and enabling applications to offer passwordless login flows without.
 
-Built on Nostr public-key cryptography, Sanctum Auth allows users to authenticate with any application in the SHOCKNET ecosystem and any third-party apps that integrate the Clink SDK. Using only a Nostr keypair teams aim enable the use of a single key without the key owner having to share it. This removes the dependency on centralized identity providers while maintaining a familiar single-sign-on experience.
+Built on Nostr public-key cryptography, SANCTUM allows users to authenticate with any application in the SHOCKNET ecosystem and any third-party apps that integrate the CLINK developer SDK. Using only a Nostr keypair teams aim enable the use of a single key without the key owner having to share it. This removes the dependency on centralized identity providers while maintaining a familiar single-sign-on experience.
 ```
 
-### Clink SDK
+### CLINK
 Developer SDK: <small>[CLINKme.dev](https://CLINKme.dev) · [github.com/SHOCKNET/CLINK](https://github.com/SHOCKNET/CLINK)</small>
 
 **One-line:** Nostr-native interface for adding Bitcoin Lightning  payments to any application.
 
 `SDK` - `API` - `Developer Tools`
 ```
-Clink is SHOCKNET's JavaScript SDK for embedding Bitcoin Lightning payments into any web application. Developers can integrate Lightning payment flows, Lightning Address resolution, and Sanctum Auth login in a few lines of code, without needing to understand the underlying node or Nostr protocol details.
+CLINK is SHOCKNET's JavaScript SDK for embedding Bitcoin Lightning payments into any web application. Developers can integrate Lightning payment flows, lightning address resolution, and SANCTUM auth login in a few lines of code, without needing to understand the underlying node or Nostr protocol details.
 
-Clink abstracts Lightning.Pub's API into a high-level, web-native interface, enabling rapid integration for wallets, e-commerce sites, content platforms, and developer tools that want to accept or send Bitcoin Lightning payments.
+CLINK abstracts Lightning.Pub's API into a high-level, web-native interface, enabling rapid integration for wallets, e-commerce sites, content platforms, and developer tools that want to accept or send Bitcoin Lightning payments.
 ```
 
