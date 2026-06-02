@@ -1,0 +1,488 @@
+/* ═══════════════════════════════════════════════════════
+   SHOCKNET → Ionic Bridge v2.1
+   Maps original CSS vars (`--bg`, `--text`, `--card-bg`,
+   `--card-border`, `--muted`, `--graphene`) to Ionic's
+   `--ion-*` vars so Ionic components inherit the site's
+   light/dark palette automatically.
+
+   Also styles specific Ionic components to match the
+   original design system: nav, modal, chip, content.
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Color palette mapping ──────────────────────────── */
+:root,
+.ion-palette-dark {
+  --ion-background-color:      var(--bg);
+  --ion-background-color-rgb:  0, 0, 0;
+  --ion-text-color:            var(--text);
+  --ion-text-color-rgb:        241, 241, 241;
+
+  --ion-toolbar-background:        var(--card-bg);
+  --ion-toolbar-background-rgb:    33, 35, 37;
+  --ion-toolbar-color:            var(--text);
+  --ion-toolbar-color-activated:  var(--sw-a);
+  --ion-toolbar-border-color:     var(--card-border);
+
+  --ion-tab-bar-background:        var(--card-bg);
+  --ion-tab-bar-border-color:      var(--card-border);
+  --ion-tab-bar-color:            var(--muted);
+  --ion-tab-bar-color-selected:   var(--text);
+
+  --ion-item-background:           var(--card-bg);
+  --ion-item-background-activated: var(--graphene);
+  --ion-item-border-color:         var(--card-border);
+  --ion-item-color:               var(--text);
+
+  --ion-card-background:           var(--card-bg);
+  --ion-card-color:               var(--text);
+
+  --ion-border-color:        var(--card-border);
+  --ion-placeholder-color:   var(--muted);
+  --ion-backdrop-color:      var(--night);
+
+  --ion-color-step-50:   var(--coal);
+  --ion-color-step-100:  var(--coal);
+  --ion-color-step-150:  var(--coal);
+  --ion-color-step-200:  var(--coal);
+  --ion-color-step-250:  var(--graphene);
+  --ion-color-step-300:  var(--graphene);
+  --ion-color-step-350:  var(--graphene);
+  --ion-color-step-400:  var(--graphene);
+  --ion-color-step-450:  var(--graphene);
+  --ion-color-step-500:  var(--graphene);
+  --ion-color-step-550:  var(--graphene);
+  --ion-color-step-600:  var(--graphene);
+  --ion-color-step-650:  var(--graphene);
+  --ion-color-step-700:  var(--dust);
+  --ion-color-step-750:  var(--dust);
+  --ion-color-step-800:  var(--dust);
+  --ion-color-step-850:  var(--dust);
+  --ion-color-step-900:  var(--dust);
+  --ion-color-step-950:  var(--dust);
+
+  --ion-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+}
+
+/* ── Product-brand color primaries ────────────────────── */
+:root {
+  --ion-color-sw:        #1BCFE0;
+  --ion-color-sw-rgb:    27,207,224;
+  --ion-color-sw-contrast: #071419;
+  --ion-color-lp:        #FF8A00;
+  --ion-color-lp-rgb:    255,138,0;
+  --ion-color-lp-contrast: #000;
+  --ion-color-lv:        #FF0050;
+  --ion-color-lv-rgb:    255,0,80;
+  --ion-color-lv-contrast: #fff;
+  --ion-color-cl:        #F7FF00;
+  --ion-color-cl-rgb:    247,255,0;
+  --ion-color-cl-contrast: #000;
+  --ion-color-sa:        #25E673;
+  --ion-color-sa-rgb:    37,230,115;
+  --ion-color-sa-contrast: #000;
+  --ion-color-bx:        #9B63FF;
+  --ion-color-bx-rgb:    155,99,255;
+  --ion-color-bx-contrast: #fff;
+  --ion-color-nr:        #F7FF00;
+  --ion-color-nr-rgb:    247,255,0;
+  --ion-color-nr-contrast: #000;
+}
+
+/* ── App shell ─────────────────────────────────────── */
+ion-app {
+  background: var(--bg);
+  color: var(--text);
+}
+
+html, body { background: var(--bg); }
+
+/* ── ion-header / ion-toolbar (main nav) ────────────── */
+ion-header.sn-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: transparent;
+  transition: background .3s, box-shadow .3s;
+}
+ion-header.sn-nav ion-toolbar {
+  --background: transparent;
+  --color: var(--text);
+  --border-color: transparent;
+  --min-height: 64px;
+  --padding-start: var(--sp-08);
+  --padding-end: var(--sp-08);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background .3s, border-color .3s;
+}
+ion-header.sn-nav.scrolled ion-toolbar {
+  --background: rgba(0,0,0,.9);
+  background: rgba(0,0,0,.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom-color: var(--card-border);
+  box-shadow: 0 1px 0 var(--card-border);
+}
+html.light ion-header.sn-nav.scrolled ion-toolbar {
+  --background: rgba(255,255,255,.92);
+  background: rgba(255,255,255,.92);
+}
+ion-header.sn-nav .nav-inner,
+ion-header.sn-nav .nav-logo,
+ion-header.sn-nav .nav-right,
+ion-header.sn-nav .nav-links,
+ion-header.sn-nav .hamburger,
+ion-header.sn-nav .theme-toggle {
+  background: transparent;
+  color: inherit;
+  border: none;
+}
+ion-header.sn-nav ion-buttons.sn-nav-start {
+  display: flex;
+  align-items: center;
+}
+ion-header.sn-nav ion-buttons.sn-nav-end {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+ion-header.sn-nav .nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  gap: var(--sp-06);
+}
+ion-header.sn-nav ul.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  margin-top: -16px;
+}
+ion-header.sn-nav ul.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: color .18s, background .18s;
+  text-decoration: none;
+}
+ion-header.sn-nav ul.nav-links a:hover {
+  color: var(--text);
+  background: rgba(255,255,255,.05);
+}
+html.light ion-header.sn-nav ul.nav-links a:hover {
+  background: rgba(0,0,0,.05);
+}
+ion-header.sn-nav ul.nav-links a.nav-active {
+  color: var(--text) !important;
+  background: rgba(255,255,255,.08) !important;
+}
+html.light ion-header.sn-nav ul.nav-links a.nav-active {
+  background: rgba(0,0,0,.07) !important;
+}
+
+ion-header.sn-nav .nav-right { display: flex; align-items: center; gap: var(--sp-02); }
+ion-header.sn-nav .nav-desktop-cta { display: flex; align-items: center; gap: var(--sp-02); }
+
+ion-header.sn-nav .theme-toggle {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: transparent; border: 1px solid var(--card-border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 18px;
+  transition: border-color .2s, color .2s;
+  cursor: pointer;
+}
+ion-header.sn-nav .theme-toggle:hover { border-color: var(--muted); color: var(--text); }
+ion-header.sn-nav .theme-toggle ion-icon { font-size: 18px; display: block; pointer-events: none; }
+
+ion-header.sn-nav .hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  width: 36px; height: 36px;
+  background: transparent; padding: 7px 6px;
+  align-items: center; justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+ion-header.sn-nav .hamburger span {
+  display: block; width: 20px; height: 1.5px;
+  background: var(--text); border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+ion-header.sn-nav .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+ion-header.sn-nav .hamburger.open span:nth-child(2) { opacity: 0; }
+ion-header.sn-nav .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Original .btn class — keep working inside ion-buttons */
+ion-header.sn-nav .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-02);
+  height: 42px; padding: 0 var(--sp-05);
+  border-radius: 10px; border: none;
+  font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500;
+  white-space: nowrap; cursor: pointer;
+  text-decoration: none;
+  transition: transform .15s, box-shadow .2s, opacity .18s, border-color .2s;
+}
+ion-header.sn-nav .btn:hover  { transform: translateY(-2px); }
+ion-header.sn-nav .btn:active { transform: translateY(0); }
+/* Note: .btn-primary / .btn-ghost colors are intentionally NOT overridden here.
+   Each product page defines its own brand button styles in its inline <style>
+   (e.g. SHOCKWALLET uses a cyan→blue gradient for .btn-primary, SHOCKNET may
+   use a flat inverted color). Letting the original CSS win keeps both
+   themes looking correct. */
+ion-header.sn-nav .btn-ghost   { background: transparent; color: var(--text); border: 1px solid var(--card-border); }
+ion-header.sn-nav .btn-ghost:hover { border-color: var(--text); }
+
+@media (max-width: 900px) {
+  ion-header.sn-nav ion-toolbar {
+    --padding-start: var(--sp-06);
+    --padding-end: var(--sp-06);
+  }
+  ion-header.sn-nav ul.nav-links,
+  ion-header.sn-nav .nav-desktop-cta { display: none; }
+  ion-header.sn-nav .hamburger { display: flex; }
+}
+
+/* ── ion-content (main scroll area) ─────────────────── */
+ion-content.sn-content {
+  --background: var(--bg);
+  --color: var(--text);
+  --padding-top: 64px;     /* nav height offset */
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  background: var(--bg);
+}
+ion-content.sn-content::part(scroll) {
+  background: var(--bg);
+}
+
+/* ── ion-modal (mobile menu) ────────────────────────── */
+ion-modal.sn-mobile-modal {
+  --height: auto;
+  --width: 100%;
+  --border-radius: 0;
+  --background: var(--bg);
+  --ion-background-color: var(--bg);
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+ion-modal.sn-mobile-modal::part(backdrop) {
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+ion-modal.sn-mobile-modal ion-header.sn-modal-header ion-toolbar {
+  --background: var(--card-bg);
+  --color: var(--text);
+  --border-color: var(--card-border);
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--card-border);
+}
+ion-modal.sn-mobile-modal ion-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+ion-modal.sn-mobile-modal ion-content.sn-mobile-content {
+  --background: var(--bg);
+  --padding-top: 0;
+  --padding-bottom: var(--sp-06);
+  background: var(--bg);
+}
+ion-modal.sn-mobile-modal ion-list.sn-mobile-list {
+  background: transparent;
+  padding: var(--sp-04) 0;
+}
+ion-modal.sn-mobile-modal ion-item {
+  --background: transparent;
+  --background-activated: rgba(255,255,255,.04);
+  --color: var(--text);
+  --border-color: transparent;
+  --padding-start: var(--sp-05);
+  --padding-end: var(--sp-05);
+  --min-height: 56px;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--card-border);
+  cursor: pointer;
+}
+html.light ion-modal.sn-mobile-modal ion-item {
+  --background-activated: rgba(0,0,0,.04);
+}
+ion-modal.sn-mobile-modal ion-item ion-label {
+  color: var(--text) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+}
+ion-modal.sn-mobile-modal .mobile-cta {
+  display: flex;
+  gap: var(--sp-02);
+  flex-wrap: wrap;
+  padding: var(--sp-05);
+  border-top: 1px solid var(--card-border);
+}
+ion-modal.sn-mobile-modal .mobile-cta .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-02);
+  height: 42px; padding: 0 var(--sp-05);
+  border-radius: 10px; border: none;
+  font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500;
+  white-space: nowrap; cursor: pointer;
+  text-decoration: none;
+  transition: transform .15s, box-shadow .2s;
+}
+ion-modal.sn-mobile-modal .mobile-cta .btn:hover { transform: translateY(-2px); }
+/* .btn-primary color intentionally left to original product CSS (see nav note) */
+ion-modal.sn-mobile-modal .mobile-cta .btn-ghost   { background: transparent; color: var(--text); border: 1px solid var(--card-border); }
+ion-modal.sn-mobile-modal .mobile-cta .btn-ghost:hover { border-color: var(--text); }
+ion-modal.sn-mobile-modal .mobile-cta .btn-sm { height: 36px; padding: 0 var(--sp-04); font-size: 13px; border-radius: 5px; }
+ion-modal.sn-mobile-modal .mobile-cta .theme-toggle {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: transparent; border: 1px solid var(--card-border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 18px;
+}
+ion-modal.sn-mobile-modal .mobile-cta .theme-toggle:hover { border-color: var(--muted); color: var(--text); }
+
+/* ── ion-chip (pills) ──────────────────────────────── */
+ion-chip.sn-pill {
+  --background: transparent;
+  --background-activated: var(--card-bg);
+  --color: var(--muted);
+  --border-color: var(--card-border);
+  --border-style: solid;
+  --border-width: 1px;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  height: 22px;
+  min-height: 22px;
+  padding: 0 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 100px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+  transition: border-color .2s, color .2s;
+}
+/* ── Ionic semantic color fallbacks (works for both products) ── */
+ion-chip.sn-pill[color="warning"] {
+  --color: var(--cl-a);
+  --border-color: rgba(240,233,26,.25);
+}
+ion-chip.sn-pill[color="primary"] {
+  --color: var(--sw-a);
+  --border-color: rgba(27,207,224,.25);
+}
+ion-chip.sn-pill[color="tertiary"] {
+  --color: var(--bx-a);
+  --border-color: rgba(155,99,255,.25);
+}
+ion-chip.sn-pill[color="secondary"] {
+  --color: var(--lp-b);
+  --border-color: rgba(240,64,245,.25);
+}
+ion-chip.sn-pill[color="success"] {
+  --color: var(--sa-a);
+  --border-color: rgba(37,230,115,.25);
+}
+ion-chip.sn-pill[color="medium"] {
+  --color: var(--muted);
+  --border-color: var(--card-border);
+}
+
+/* ── Product-brand chip colors (use explicit product name) ──
+   sw: SHOCKWALLET (cyan → blue)    lp: LIGHTNING.pub (orange → pink)
+   lv: LN.VIDEO (red)                cl: CLINK (yellow → purple)
+   sa: SANCTUM (green)               bx: BXRD (purple)
+   nr: NYMRANK (yellow → green)                          */
+ion-chip.sn-pill[color="sw"] {
+  --color: var(--sw-a);
+  --border-color: rgba(27,207,224,.25);
+}
+ion-chip.sn-pill[color="lp"] {
+  --color: var(--lp-a);
+  --border-color: rgba(255,138,0,.25);
+}
+ion-chip.sn-pill[color="lv"] {
+  --color: var(--lv-a);
+  --border-color: rgba(255,0,80,.25);
+}
+ion-chip.sn-pill[color="cl"] {
+  --color: var(--cl-a);
+  --border-color: rgba(247,255,0,.25);
+}
+ion-chip.sn-pill[color="sa"] {
+  --color: var(--sa-a);
+  --border-color: rgba(37,230,115,.25);
+}
+ion-chip.sn-pill[color="bx"] {
+  --color: var(--bx-a);
+  --border-color: rgba(155,99,255,.25);
+}
+ion-chip.sn-pill[color="nr"] {
+  --color: var(--nr-a);
+  --border-color: rgba(247,255,0,.25);
+}
+ion-chip.sn-pill:hover { border-color: var(--muted); }
+
+/* ── ion-button (modal close) ──────────────────────── */
+ion-button {
+  --color: var(--text);
+  --background: transparent;
+  --background-hover: rgba(255,255,255,.05);
+  --background-activated: rgba(255,255,255,.08);
+  --border-radius: 8px;
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --box-shadow: none;
+  font-family: inherit;
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+ion-button ion-icon { color: inherit; }
+html.light ion-button { --background-hover: rgba(0,0,0,.05); --background-activated: rgba(0,0,0,.08); }
+ion-modal ion-button { color: var(--text); }
+
+/* ── Make sure section padding is preserved ─────────── */
+ion-content.sn-content section#hero {
+  padding-top: 0;  /* ion-content already adds 64px top padding */
+}
+
+/* ── Hero/Section transitions still work ────────────── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Override Ionic's default box-sizing resets that may
+      interfere with the original .reveal animations ── */
+.anim-1, .anim-2, .anim-3, .anim-4, .anim-5 {
+  animation-fill-mode: both;
+}
+
+/* ── Prevent ion-content from creating inner scrollbar
+      that conflicts with the section layout ────────── */
+ion-content.sn-content {
+  --overflow: visible;
+}
