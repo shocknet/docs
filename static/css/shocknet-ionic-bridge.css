@@ -1161,6 +1161,44 @@ body.sn .footer-copy a:hover { color: var(--text); }
   --ion-color-light:     var(--ice);
 }
 
+/* ── LIGHT THEME IONIC OVERRIDES ──
+   The :root,.ion-palette-dark block above hardcodes dark-mode RGB ramps
+   and step colors. This block provides the light-mode equivalents so
+   Ionic components (chips, items, modals, content) render correctly when
+   <html class="light"> is set. */
+html.light, .ion-palette-light {
+  --ion-background-color-rgb:  255, 255, 255;
+  --ion-text-color-rgb:        17, 18, 19;
+  --ion-toolbar-background-rgb: 245, 245, 243;
+  --ion-tab-bar-background-rgb: 245, 245, 243;
+
+  --ion-item-background-activated: rgba(0, 0, 0, .04);
+  --ion-toolbar-color-activated:   var(--sw-b);
+  --ion-tab-bar-color-selected:    var(--sw-b);
+
+  --ion-color-step-50:   #FFFFFF;
+  --ion-color-step-100:  #FAFAF8;
+  --ion-color-step-150:  #F5F5F3;
+  --ion-color-step-200:  #EEEEEC;
+  --ion-color-step-250:  #E5E5E2;
+  --ion-color-step-300:  #DCDCD8;
+  --ion-color-step-350:  #D0D0CC;
+  --ion-color-step-400:  #B8B8B4;
+  --ion-color-step-450:  #9E9E9A;
+  --ion-color-step-500:  #7E7E7A;
+  --ion-color-step-550:  #5A5A5A;
+  --ion-color-step-600:  #4A4A4A;
+  --ion-color-step-650:  #3A3A3A;
+  --ion-color-step-700:  #2A2A2A;
+  --ion-color-step-750:  #1A1A1A;
+  --ion-color-step-800:  #111213;
+  --ion-color-step-850:  #0A0A0B;
+  --ion-color-step-900:  #050506;
+  --ion-color-step-950:  #000000;
+
+  --ion-backdrop-color: var(--ice);
+}
+
 /* Product-brand Ionic color primaries */
 :root {
   --ion-color-sw:         #1BCFE0;
@@ -1475,4 +1513,3 @@ ion-content.sn-content section#solution { padding-top: 0; }
 
 /* Allow ion-content children to overflow (sections have their own bg) */
 ion-content.sn-content { --overflow: visible; }
-
