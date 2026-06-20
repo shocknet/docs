@@ -28,7 +28,7 @@
   --cl-a:#F7FF00;--cl-b:#9B63FF;--cl-on-a:#111213;--cl-on-b:#fff;
   --sa-a:#25E673;--sa-on:#111213;
   --bx-a:#9B63FF;--bx-on:#8A6BE5;
-  --ns-a:#3C3C3C;--ns-on:#8A8A8A;
+  --ns-a:#9B63FF;--ns-b:#F040F5;--ns-on:#111213;
   --ghost-border:#3C3C3C;--ghost-text:#F1F1F1;
   --nr-a:#F7FF00;--nr-b:#59B942;--nr-on-a:#111213;--nr-on-b:#111213;
 }
@@ -43,9 +43,9 @@
   --cl-a:#F0E91A;--cl-b:#8A6BE5;--cl-on-a:#111213;--cl-on-b:#fff;
   --sa-a:#4FD27A;--sa-on:#111213;
   --bx-a:#9B63FF;--bx-on:#8A6BE5;
-  --ns-a:#3C3C3C;--ns-on:#8A8A8A;
   --ghost-border:#D0D0CC;--ghost-text:#111213;
   --bx-a:#8A6BE5;
+  --ns-a:#8A6BE5;--ns-b:#D75AD7;--ns-on:#111213;
   --nr-a:#D4C800;--nr-b:#3D8428;--nr-on-a:#111213;--nr-on-b:#111213;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -125,6 +125,11 @@ nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:b
 .btn-cl-b{background:var(--cl-b);color:#fff;border:none}.btn-cl-b-sm{background:var(--cl-b);color:#fff;border:none}
 .btn-sa{background:var(--sa-a);color:var(--sa-on)}.btn-sa-sm{background:var(--sa-a);color:var(--sa-on)}
 .btn-sa-out{background:transparent;border:1px solid var(--sa-a);color:var(--sa-a)}
+.btn-ns{background:linear-gradient(90deg,var(--ns-a),var(--ns-b));color:#fff}.btn-ns-sm{background:linear-gradient(90deg,var(--ns-a),var(--ns-b));color:#fff}
+.btn-ns-a{background:var(--ns-a);border:1px solid var(--ns-a);color:#111213}
+.btn-ns-b{background:var(--ns-b);border:1px solid var(--ns-b);color:#f1f1f1}
+.btn-ns-in{background:transparent;border:1px solid var(--ns-b);color:var(--ns-b)}
+.btn-ns-out{background:transparent;border:1px solid var(--ns-a);color:var(--ns-a)}
 
 /* ═══ DOWNLOAD BUTTONS ═══ */
 .dl-row{display:flex;gap:10px;flex-wrap:wrap;padding:24px 0 0;border-top:1px solid color-mix(in srgb,var(--border) 60%,transparent);margin-top:24px}
@@ -145,6 +150,8 @@ nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:b
 .pill-cl{background:color-mix(in srgb,var(--cl-b) 14%,transparent);border:1px solid var(--cl-b);color:var(--cl-b)}
 .pill-sa{background:color-mix(in srgb,var(--sa-a) 14%,transparent);border:1px solid var(--sa-a);color:var(--sa-a)}
 .pill-cy{background:color-mix(in srgb,var(--cl-a) 14%,transparent);border:1px solid var(--cl-a);color:var(--cl-a)}
+.pill-ns{background:color-mix(in srgb,var(--ns-a) 14%,transparent);border:1px solid var(--ns-a);color:var(--ns-a)}
+.pill-ns2{background:color-mix(in srgb,var(--ns-b) 14%,transparent);border:1px solid var(--ns-b);color:var(--ns-b)}
 
 /* ═══ SWATCHES ═══ */
 .sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:12px}
@@ -349,16 +356,16 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
   <li><a href="#sanctum">06 - SANCTUM</a></li>
   <li><a href="#clink">07 - CLINK</a></li>
   <li><a href="#nymrank">08 - NYMRANK</a></li>
-  <li><a href="#color">09 — Color</a></li>
-  <li><a href="#type">10 — Typography</a></li>
-  <li><a href="#components">11 — Components</a></li>
-  <li><a href="#icons">12 — Icons</a></li>
-  <li><a href="#spacing">13 - Spacing</a></li>
-  <li><a href="#voice">14 - Voice</a></li>
-  <li><a href="#surfaces">15 - Surfaces</a></li>
-  <li><a href="#cobranding">16 - Co-branding</a></li>
+  <li><a href="#nodestr">09 - NODESTR</a></li>
+  <li><a href="#color">10 — Color</a></li>
+  <li><a href="#type">11 — Typography</a></li>
+  <li><a href="#components">12 — Components</a></li>
+  <li><a href="#icons">13 — Icons</a></li>
+  <li><a href="#spacing">14 - Spacing</a></li>
+  <li><a href="#voice">15 - Voice</a></li>
+  <li><a href="#surfaces">16 - Surfaces</a></li>
+  <li><a href="#cobranding">17 - Co-branding</a></li>
 </ul>
-  </ul>
   <div class="toggle-wrap">
     <span class="toggle-name" id="theme-label">DARK</span>
     <button class="toggle-btn" id="themeToggle" aria-label="Toggle theme">
@@ -370,7 +377,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 <!-- ══════════ 01 SHOCKNET ══════════ -->
 <section id="brand">
   <div class="page">
-    <div class="chapter"><span class="ch-num">01</span><div><span class="section-tag">Company Brand</span><h2>SHOCKNET</h2></div></div>
+    <div class="chapter"><span class="ch-num">01</span><div><span class="section-tag">Company Brand</span><h2>SHOCKNET<small>.net</small></h2></div></div>
     <div class="rule"></div>
     <p style="max-width:620px;margin-bottom:36px">The SHOCKNET symbol is a two-path geometric form derived from a bisected arc. On dark backgrounds the mark renders in <strong style="color:var(--text)">#F1F1F1</strong>. On light backgrounds it renders in <strong style="color:var(--text)">#111213</strong>. Toggle the theme to see both.</p>
     <div class="callout">
@@ -484,7 +491,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 <!-- ══════════ 02 SHOCKWALLET ══════════ -->
 <section id="shockwallet">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:linear-gradient(180deg,var(--sw-a),var(--sw-b))"></div><div><span class="section-tag">02 - PRODUCT</span><h2>SHOCKWALLET</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:linear-gradient(180deg,var(--sw-a),var(--sw-b))"></div><div><span class="section-tag">02 - PRODUCT</span><h2>SHOCKWALLET<small>.app</small></h2></div></div>
     <div class="rule"></div>
     <p style="max-width:560px;margin-bottom:28px">A Bitcoin Lightning wallet and social layer. The cyan-to-blue gradient represents the flow of value — instant, frictionless, and open.</p>
     <div class="callout"><span class="callout-icon">🔵</span><div><h6>SHOCKWALLET colors change per theme</h6><p>Dark: Cyan <strong style="color:var(--text)">#1BCFE0</strong> → Blue <strong style="color:var(--text)">#3A7BFF</strong> &nbsp;·&nbsp; Light: Cyan <strong style="color:var(--text)">#4FD6F0</strong> → Blue <strong style="color:var(--text)">#2E6DCE</strong></p></div></div>
@@ -574,7 +581,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 <!-- ══════════ 03 LIGHTNING.pub ══════════ -->
 <section id="lnpub">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:linear-gradient(180deg,var(--lp-a),var(--lp-b))"></div><div><span class="section-tag">03 - PRODUCT</span><h2>LIGHTNING.pub</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:linear-gradient(180deg,var(--lp-a),var(--lp-b))"></div><div><span class="section-tag">03 - PRODUCT</span><h2>LIGHTNING<small>.pub</small></h2></div></div>
     <div class="rule"></div>
     <p style="max-width:560px;margin-bottom:28px">A decentralized social publishing network on Lightning. The orange-to-purple gradient evokes energy, creativity, and the borderless nature of open publishing.</p>
     <div class="callout"><span class="callout-icon">🟠</span><div><h6>LIGHTNING.pub colors change per theme</h6><p>Dark: Orange <strong style="color:var(--text)">#FF8A00</strong> → Magenta <strong style="color:var(--text)">#F040F5</strong> &nbsp;·&nbsp; Light: Orange <strong style="color:var(--text)">#FF9900</strong> → Magenta <strong style="color:var(--text)">#D75AD7</strong></p></div></div>
@@ -636,7 +643,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 <!-- ══════════ 04 LIGHTNING.video ══════════ -->
 <section id="lnvideo">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--lv-a)"></div><div><span class="section-tag">04 - PRODUCT</span><h2>LIGHTNING.video</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--lv-a)"></div><div><span class="section-tag">04 - PRODUCT</span><h2>LIGHTNING<small>.video</small></h2></div></div>
     <div class="rule"></div>
     <p style="max-width:560px;margin-bottom:28px">Bitcoin-native video streaming with pay-per-view on Lightning. A singular bold red communicates live action, urgency, and the immediacy of streaming.</p>
     <div class="callout"><span class="callout-icon">🔴</span><div><h6>LIGHTNING.video red shifts between themes</h6><p>Dark: <strong style="color:var(--text)">#FF0050</strong> — deep electric red for dark backgrounds &nbsp;·&nbsp; Light: <strong style="color:var(--text)">#FF3366</strong> — warmer rose-red for light surfaces</p></div></div>
@@ -725,7 +732,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 <!-- ══════════ 05 BXRD ══════════ -->
 <section id="bxrd">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--bx-a)"></div><div><span class="section-tag">05 - PRODUCT</span><h2>BXRD</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--bx-a)"></div><div><span class="section-tag">05 - PRODUCT</span><h2>BXRD<small>.app</small></h2></div></div>
     <div class="rule"></div>
     <p style="max-width:560px;margin-bottom:28px">BXRD is the social and publishing layer of the SHOCKNET ecosystem. A singular violet communicates depth, creativity, and the expressive power of decentralised identity.</p>
     <div class="callout"><span class="callout-icon">🟣</span><div><h6>BXRD color shifts between themes</h6><p>Dark: <strong style="color:var(--text)">#9B63FF</strong> — vivid violet on dark surfaces &nbsp;·&nbsp; Light: <strong style="color:var(--text)">#8A6BE5</strong> — deeper violet for legibility on white</p></div></div>
@@ -830,7 +837,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 
   <section id="clink">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:linear-gradient(180deg,var(--cl-a),var(--cl-b))"></div><div><span class="section-tag">07 - PRODUCT</span><h2>CLINK</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:linear-gradient(180deg,var(--cl-a),var(--cl-b))"></div><div><span class="section-tag">07 - PRODUCT</span><h2>CLINK<small>me.dev</small></h2></div></div>
     <div class="rule"></div>
     <p style="max-width:560px;margin-bottom:28px">Lightning-powered tipping and micro-transactions. Yellow signals speed and energy; violet adds depth and a sense of occasion. Together they make every transaction feel like a celebration.</p>
     <div class="callout"><span class="callout-icon">⚡</span><div><h6>CLINK colors change per theme</h6><p>Dark: Yellow <strong style="color:var(--text)">#F7FF00</strong> / Purple <strong style="color:var(--text)">#9B63FF</strong> &nbsp;·&nbsp; Light: Yellow <strong style="color:var(--text)">#F0E91A</strong> / Purple <strong style="color:var(--text)">#8A6BE5</strong></p></div></div>
@@ -870,7 +877,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
   <!-- ══════════ 08 NYMRANK ══════════ -->
 <section id="nymrank">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:linear-gradient(180deg,var(--nr-a),var(--nr-b))"></div><div><span class="section-tag">08 - PRODUCT</span><h2>NYMRANK</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:linear-gradient(180deg,var(--nr-a),var(--nr-b))"></div><div><span class="section-tag">08 - PRODUCT</span><h2>NYMRANK<small>.dev</small></h2></div></div>
     <div class="rule"></div>
     <p style="max-width:560px;margin-bottom:28px">NYMRANK is a pseudonymous reputation and ranking protocol built on the Lightning Network. Yellow signals signal strength and visibility; green signals trust, growth, and on-chain verification.</p>
     <div class="callout"><span class="callout-icon">🟡</span><div><h6>NYMRANK uses two colors that both shift per theme</h6><p>Dark: Yellow <strong style="color:var(--text)">#F7FF00</strong> / Green <strong style="color:var(--text)">#59B942</strong> &nbsp;·&nbsp; Light: Yellow <strong style="color:var(--text)">#D4C800</strong> / Green <strong style="color:var(--text)">#3D8428</strong></p></div></div>
@@ -923,10 +930,65 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
   </div>
 </section>
 
-<!-- ══════════ 09 COLOR ══════════ -->
+<!-- ══════════ 09 NODESTR ══════════ -->
+<section id="nodestr">
+  <div class="page">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:linear-gradient(180deg,var(--ns-a),var(--ns-b))"></div><div><span class="section-tag">09 - PRODUCT</span><h2>NODESTR<small>.cloud</small></h2></div></div>
+    <div class="rule"></div>
+    <p style="max-width:560px;margin-bottom:28px">NODESTR is a decentralized compute and hosting layer built on Lightning. Purple signals depth and infrastructure; pink adds energy and the pulse of live compute — together representing raw power and real-time availability.</p>
+    <div class="callout"><span class="callout-icon">☁️</span><div><h6>NODESTR uses two colors that both shift per theme</h6><p>Dark: Purple <strong style="color:var(--text)">#9B63FF</strong> / Pink <strong style="color:var(--text)">#F040F5</strong> &nbsp;·&nbsp; Light: Purple <strong style="color:var(--text)">#8A6BE5</strong> / Pink <strong style="color:var(--text)">#D75AD7</strong></p></div></div>
+    <div class="g2" style="margin-bottom:20px">
+      <div><span style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-dim);display:block;margin-bottom:10px">Logotype — Active Theme</span>
+        <div class="logo-box">
+          <svg width="380" height="58" viewBox="0 0 444 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="wm" d="M392 24.5195C387.291 24.5195 378.167 24.5195 378.167 24.5195L367.031 55.6875H353.828L364.919 24.5195H348C348 24.5195 348.716 24.3278 349.356 23.8799C349.932 23.4319 350.509 22.8554 351.021 22.1514C351.532 21.5114 351.98 20.7435 352.364 19.9756C352.748 19.2077 353.133 18.4398 353.389 17.6719L355.053 13L396.216 13C395.05 16.272 392 24.5195 392 24.5195Z"/>
+            <path class="wm" d="M398.745 55.688H385.497L400.729 13H437.145C438.297 13 439.321 13.192 440.281 13.512C441.177 13.896 441.945 14.344 442.521 14.984C443.033 15.624 443.417 16.456 443.545 17.352C443.673 18.248 443.481 19.272 443.097 20.424L437.081 37.256C436.697 38.28 436.121 39.24 435.417 40.072C434.649 40.904 433.817 41.608 432.921 42.248C431.961 42.888 430.937 43.4 429.849 43.784C428.761 44.168 427.737 44.488 426.713 44.616L433.177 55.688H418.137L411.225 44.68H402.649L398.745 55.688ZM409.881 24.52L406.809 33.16H425.305L428.377 24.52H409.881Z"/>
+            <path class="wm" d="M305.516 40.136C304.364 40.136 303.276 40.008 302.38 39.624C301.42 39.304 300.652 38.792 300.14 38.152C299.564 37.512 299.244 36.744 299.116 35.848C298.988 34.952 299.116 33.864 299.564 32.712L303.98 20.424C304.812 18.12 306.284 16.328 308.396 14.984C310.508 13.704 312.748 13 315.18 13H349.548L347.884 17.672C347.628 18.44 347.244 19.208 346.86 19.976C346.476 20.744 346.028 21.512 345.516 22.152C345.004 22.856 344.428 23.432 343.852 23.88C343.212 24.328 342.636 24.52 341.996 24.52H315.756L314.284 28.616H335.404C337.708 28.616 339.5 29.32 340.716 30.6C341.932 31.944 342.124 33.736 341.292 36.04L336.94 48.264C336.044 50.568 334.572 52.424 332.46 53.704C330.348 55.048 328.108 55.688 325.74 55.688H289.372L293.532 44.168H325.228L326.636 40.136H305.516Z"/>
+            <path class="wm" d="M241.997 55.688L257.229 13H297.485L295.821 17.672C295.565 18.44 295.181 19.208 294.797 19.976C294.413 20.744 293.965 21.512 293.453 22.152C292.941 22.856 292.365 23.432 291.789 23.88C291.149 24.328 290.573 24.52 289.933 24.52H266.381L264.909 28.616H286.013L281.917 40.136H260.813L259.405 44.168H288.413L284.253 55.688H241.997Z"/>
+            <path class="wm" d="M241.628 38.5L238.116 48.264C237.22 50.568 235.748 52.424 233.636 53.704C231.524 55.048 229.284 55.688 226.916 55.688H190.5L205.732 13H226.94C237.628 13 245.628 27 241.628 38.5ZM226.404 44.168C226.404 44.168 228.128 39.5 229.892 34.344C231.332 30.1361 228.628 24.5 224.132 24.52C220.52 24.5361 214.884 24.52 214.884 24.52L207.908 44.168H226.404Z"/>
+            <path class="wm" d="M175.651 44.168L182.627 24.52H164.131L157.155 44.168H175.651ZM197.347 20.424L187.363 48.264C186.467 50.568 184.995 52.424 182.883 53.704C180.771 55.048 178.531 55.688 176.163 55.688H148.323C147.171 55.688 146.083 55.56 145.187 55.176C144.291 54.856 143.523 54.344 143.011 53.704C142.435 53.064 142.051 52.296 141.923 51.4C141.795 50.504 141.923 49.416 142.371 48.264L152.355 20.424C153.187 18.12 154.659 16.328 156.771 14.984C158.883 13.704 161.123 13 163.555 13H191.395C192.547 13 193.571 13.192 194.531 13.512C195.427 13.896 196.195 14.344 196.771 14.984C197.283 15.624 197.667 16.456 197.795 17.352C197.923 18.248 197.731 19.272 197.347 20.424Z"/>
+            <path class="wm" d="M118.952 36.2878C118.952 36.2878 116.004 27.2804 114.266 21C111.5 11 97.5783 11 94.0171 21C92.8696 24.2221 91.1485 28.9956 89.3815 34C86.3802 42.5 85.8802 44.5 77.8802 44.4805L73.7461 56H81.5283C91.6764 56 95.8802 50 97.9043 44.512C99.9284 39.024 102.032 33.024 102.032 33.024H103.428C103.428 33.024 106.219 42.6113 108.114 48.3118C111.5 58.5 124.802 58.3118 128.363 48.3118C129.511 45.0897 131.232 40.3162 132.999 35.3118C136 26.8118 136.5 24.8118 144.5 24.8313C145.5 21.8118 146 20.3118 146 20.3118C147 16.8118 150 13.3118 152 13.3118H140.852C130.704 13.3118 126.5 19.3118 124.476 24.7998C122.452 30.2878 120.348 36.2878 120.348 36.2878H118.952Z"/>
+            <path d="M67.6309 24.8506C68.5212 27.9128 69 31.1505 69 34.5C69 53.5537 53.5537 69 34.5 69C23.4713 69 13.6515 63.8247 7.33594 55.7705C15.3311 54.6254 19.613 49.3686 21.4043 44.5117C23.419 39.0491 25.5129 33.0795 25.5322 33.0244H25.9277C25.9532 33.0823 30.0279 42.3522 32.6133 48.3115C37.1003 58.654 49.3021 58.3115 52.8633 48.3115C54.0107 45.0895 55.7321 40.3166 57.499 35.3125C60.3191 27.3257 60.9305 25.0767 67.6309 24.8506Z" fill="var(--ns-a)"/>
+            <path d="M34.5 0C45.6776 1.93508e-05 55.6115 5.31732 61.916 13.5586C54.0032 14.7413 49.7573 19.969 47.9756 24.7998C45.9515 30.2878 43.8477 36.2881 43.8477 36.2881H43.4521C43.4521 36.2881 39.3601 26.978 36.7666 21C32.2796 10.6576 20.0778 11 16.5166 21C15.3692 24.2221 13.6488 28.9957 11.8818 34C9.02221 42.0988 8.43294 44.2943 1.46387 44.4668C0.513126 41.3112 6e-06 37.9656 0 34.5C0 15.4462 15.4462 0 34.5 0Z" fill="var(--ns-b)"/>
+          </svg>
+        </div>
+      </div>
+      <div><span style="font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-dim);display:block;margin-bottom:10px">Avatar Theme Variants</span>
+        <div class="mark-pair">
+          <div><span class="mono" style="display:block;margin-bottom:6px">Dark</span>
+            <div class="mark-dark" style="min-height:110px">
+              <svg width="52" height="47" viewBox="0 0 110 100" fill="none">
+                <path d="M87.6506 40.4902C88.528 43.5081 88.9999 46.6988 88.9999 49.9998C88.9998 68.7774 73.7775 83.9998 54.9999 83.9998C44.131 83.9998 34.4536 78.8995 28.2295 70.962C36.1088 69.8335 40.3286 64.6529 42.094 59.8664C44.0795 54.483 46.143 48.5998 46.1621 48.5456H46.5518C46.5769 48.6026 50.5926 57.7382 53.1405 63.6112C57.5624 73.8037 69.5874 73.4662 73.097 63.6112C74.2278 60.4359 75.9243 55.7321 77.6656 50.8005C80.4448 42.9294 81.0473 40.7131 87.6506 40.4902Z" fill="#8A6BE5"/>
+                <path d="M55 16C66.0156 16 75.8055 21.2403 82.0187 29.3621C74.2205 30.5276 70.0362 35.6796 68.2803 40.4404C66.2855 45.8488 64.2122 51.7622 64.2122 51.7622H63.8224C63.8224 51.7622 59.7896 42.587 57.2338 36.6957C52.8118 26.5031 40.7868 26.8406 37.2772 36.6957C36.1464 39.871 34.451 44.5754 32.7096 49.5072C29.8915 57.4887 29.3107 59.6523 22.4427 59.8224C21.5057 56.7124 21 53.4153 21 50C21 31.2224 36.2224 16 55 16Z" fill="#D75AD7"/>
+              </svg>
+            </div>
+          </div>
+          <div><span class="mono" style="display:block;margin-bottom:6px">Light</span>
+            <div class="mark-light" style="min-height:110px">
+              <svg width="52" height="47" viewBox="0 0 110 100" fill="none">
+                <path d="M87.6506 40.4902C88.528 43.5081 88.9999 46.6988 88.9999 49.9998C88.9998 68.7774 73.7775 83.9998 54.9999 83.9998C44.131 83.9998 34.4536 78.8995 28.2295 70.962C36.1088 69.8335 40.3286 64.6529 42.094 59.8664C44.0795 54.483 46.143 48.5998 46.1621 48.5456H46.5518C46.5769 48.6026 50.5926 57.7382 53.1405 63.6112C57.5624 73.8037 69.5874 73.4662 73.097 63.6112C74.2278 60.4359 75.9243 55.7321 77.6656 50.8005C80.4448 42.9294 81.0473 40.7131 87.6506 40.4902Z" fill="#9B63FF"/>
+                <path d="M55 16C66.0156 16 75.8055 21.2403 82.0187 29.3621C74.2205 30.5276 70.0362 35.6796 68.2803 40.4404C66.2855 45.8488 64.2122 51.7622 64.2122 51.7622H63.8224C63.8224 51.7622 59.7896 42.587 57.2338 36.6957C52.8118 26.5031 40.7868 26.8406 37.2772 36.6957C36.1464 39.871 34.451 44.5754 32.7096 49.5072C29.8915 57.4887 29.3107 59.6523 22.4427 59.8224C21.5057 56.7124 21 53.4153 21 50C21 31.2224 36.2224 16 55 16Z" fill="#F040F5"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dl-row"><span class="dl-label" style="width:100%">Download NODESTR Avatar + Logo</span>
+      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/NODESTR.zip');"></span color="#f1f1f1">Dark SVG + PNG Pack.zip</span></button>
+      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/NODESTR.zip');"></span color="#111213">Light SVG + PNG Pack.zip</span></button>
+      <button class="btn-sm btn-sn-sm" onclick="downloadSVG('nodestr','light')"></span color="#f1f1f1">Dark Logo.svg</button>
+      <button class="btn-sm btn-sn-out" onclick="downloadSVG('nodestr','dark')">Light Logo.svg</button>
+      <button class="btn-sm btn-sn-sm" onclick="window.open('https://docs.shock.network/logos/Dark/NODESTR/Avatar.zip');"></span color="#f1f1f1">Dark SVG + PNG Avatar.zip</span></button>
+      <button class="btn-sm btn-sn-out" onclick="window.open('https://docs.shock.network/logos/Light/NODESTR/Avatar.zip');"></span color="#111213">Light SVG + PNG Avatar.zip</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 10 COLOR ══════════ -->
 <section id="color">
   <div class="page">
-    <div class="chapter"><span class="ch-num">09 -</span><div><span class="section-tag">Color System</span><h2>Palette</h2></div></div>
+    <div class="chapter"><span class="ch-num">10 -</span><div><span class="section-tag">Color System</span><h2>Palette</h2></div></div>
     <div class="rule"></div>
     <p style="max-width:620px;margin-bottom:36px">Each product has a designated color identity that adapts between themes. The split swatches below always show both: <strong style="color:var(--text)">left half = dark theme</strong>, <strong style="color:var(--text)">right half = light theme</strong>. The live panel at the bottom shows only the currently active theme's values.</p>
     <div class="callout"><span class="callout-icon">⚡</span><div><h6>Product colors are theme-specific — never interchangeable</h6><p>Dark values are calibrated for luminosity on dark surfaces. Light values are adjusted for legibility and reduced glare on white backgrounds. Using dark values on light backgrounds or vice versa violates brand guidelines.</p></div></div>
@@ -965,7 +1027,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 <!-- ══════════ 10 TYPOGRAPHY ══════════ -->
 <section id="type">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">10 - STYLE</span><h2>Typography & Fonts</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">11 - STYLE</span><h2>Typography & Fonts</h2></div></div>
 
     <div class="rule"></div>
     <p style="max-width:580px;margin-bottom:36px">Three typefaces form the system. DM Mono anchors all display and heading usage. Inter handles all interface copy. DM Mono handles supporting and technical text. All three are free and open-source.</p>
@@ -1011,7 +1073,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 <!-- ══════════ 11 COMPONENTS ══════════ -->
 <section id="components">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">11 - STYLE</span><h2>Ui Components</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">12 - STYLE</span><h2>Ui Components</h2></div></div>
 
     <div class="rule"></div>
     <h4 style="margin-bottom:8px">Surface Shape</h4>
@@ -1062,7 +1124,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 <!-- ══════════ 12 ICONS ══════════ -->
 <section id="icons">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">12 - STYLE</span><h2>Icons Libraries</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">13 - STYLE</span><h2>Icons Libraries</h2></div></div>
 
     <div class="rule"></div>
     <p style="max-width:620px;margin-bottom:36px">SHOCKNET and all its products use <strong style="color:var(--text)">Ionicons</strong> as the primary icon library — open-source, MIT-licensed, and available as a web component or SVG. Supplementary sets may be used when a specific glyph is unavailable, provided they follow the same weight and optical sizing guidelines.</p>
@@ -1488,7 +1550,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
   <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px">
     <div class="product-bar" style="background:var(--text-dim)"></div>
     <div>
-      <span class="section-tag">13 - GUIDELINES</span>
+      <span class="section-tag">14 - GUIDELINES</span>
       <h2>Spacing & Layout Grid</h2>
     </div>
   </div>
@@ -1619,7 +1681,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 <!-- ━━━━━━━━━━━━━━━━━━━ 14 BRAND VOICE & TONE ━━━━━━━━━━━━━━━━━━━━ -->
 <section id="voice">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">14 - GUIDELINES</span><h2>Comms Voice & Tone</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">15 - GUIDELINES</span><h2>Comms Voice & Tone</h2></div></div>
 
     <div class="rule"></div>
 
@@ -1735,7 +1797,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 <!-- ━━━━━━━━━━━━━━━━━━━  15 DIGITAL SURFACES  ━━━━━━━━━━━━━━━━━━━ -->
 <section id="surfaces">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">15 - GUIDELINES</span><h2>Digital Surfaces</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">16 - GUIDELINES</span><h2>Digital Surfaces</h2></div></div>
 
     <div class="rule"></div>
 
@@ -1818,7 +1880,7 @@ footer{padding:48px;background:var(--bg);border-top:1px solid var(--border);tran
 <!-- ━━━━━━━━━━  16 CO-BRANDING  ━━━━━━━━━━━━━━━━ -->
 <section id="cobranding">
   <div class="page">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">16 - GUIDELINES</span><h2>Co-Branding</h2></div></div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px"><div class="product-bar" style="background:var(--text-dim)"></div><div><span class="section-tag">17 - GUIDELINES</span><h2>Co-Branding</h2></div></div>
 
     <div class="rule"></div>
     <p style="max-width:620px;margin-bottom:36px">When SHOCKNET products appear alongside external brands, partner marks, or in third-party contexts, specific rules govern how the marks relate to each other — protecting both parties and maintaining brand clarity.</p>
