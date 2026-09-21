@@ -1,5 +1,31 @@
 # FAQ
 
+## Table of Contents
+
+- [General Questions](#general-questions)
+  - [What is Lightning.Pub?](#what-is-lightningpub)
+- [Operating a Pub](#operating-a-pub)
+  - [Requirements](#requirements)
+  - [Configuration Options](#configuration-options)
+  - [Backups](#backups)
+  - [How do I get my seed phrase and static channel backups?](#how-do-i-get-my-seed-phrase-and-static-channel-backups)
+  - [How do I migrate Pub to a new machine?](#how-do-i-migrate-pub-to-a-new-machine)
+- [Transactions](#transactions)
+  - [How do I send on-chain Bitcoin?](#how-do-i-send-on-chain-bitcoin)
+- [Lightning Network](#lightning-network)
+  - [How do I open a Lightning channel?](#how-do-i-open-a-lightning-channel)
+  - [Does it use ECash? How does it compare on privacy?](#does-it-use-ecash-how-does-it-compare-on-privacy)
+  - [Updates](#updates)
+- [Security](#security)
+  - [How safe is Lightning.Pub?](#how-safe-is-lightningpub)
+- [Troubleshooting](#troubleshooting)
+  - [Installation Issues](#installation-issues)
+  - [Common Issues](#common-issues)
+- [Support](#support)
+  - [Where can I get help with ShockWallet?](#where-can-i-get-help-with-shockwallet)
+  - [How do I report a bug?](#how-do-i-report-a-bug)
+  - [Is there a community forum for Lightning.Pub users?](#is-there-a-community-forum-for-lightningpub-users)
+
 ## General Questions
 
 ### What is Lightning.Pub?
@@ -43,6 +69,10 @@ Note: Seed phrases and static channel backups from direct LND instances should b
 Pub instances that were created with the installer will have a `db.sqlite` file in the `lightning_pub` directory. You can introspect this file to recover seed and encryption phrases, they are also cached on the Nostr relay as a contingency. We do not yet have automatic tooling for recoveries, but it is on the roadmap. Contact us for support with manual recoveries.
 
 Lightning "backups" are disaster recovery scenarios given the nature of channel states, and they are not quick, easy, or costless. See above for hardware recommendations to prevent data loss.
+
+### How do I migrate Pub to a new machine?
+
+Stop Pub and LND on the old host, copy `db.sqlite`, optional `admin.npub`, and `~/.lnd` to a new machine, then install Pub on the new host and restore those files before starting services. Full steps are in the [Migrate Pub](./migrate.md) guide.
 
 ### How do I get my seed phrase and static channel backups?
 
