@@ -50,5 +50,5 @@ Moving or reallocating fee-root balances from the dashboard is **not** available
 ## Related reading
 
 - [FAQ](./faq.md) — operating, backups, and troubleshooting
-- [Migrate Pub](./migrate.md) — admin reset does not move sats between accounts
+- [Reset admin](./admin-reset.md) — changing admin does not move sats between accounts
 - [Watchdog Security](./watchdog.md) — balance discrepancies and `WATCHDOG_MAX_DIFF_SATS`

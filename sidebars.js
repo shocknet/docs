@@ -38,15 +38,10 @@ const sidebars = {
     'pub/start9',
     'pub/umbrel',
     'pub/watchdog',
-    {
-      type: 'category',
-      label: 'FAQ & guides',
-      items: [
-        {type: 'doc', id: 'pub/faq', label: 'FAQ'},
-        {type: 'doc', id: 'pub/migrate', label: 'Migrate Pub'},
-        {type: 'doc', id: 'pub/assets-liabilities', label: 'Assets & liabilities'},
-      ],
-    },
+    'pub/migrate',
+    'pub/admin-reset',
+    'pub/assets-liabilities',
+    'pub/faq',
     ],
   video: [
     'video/intro',

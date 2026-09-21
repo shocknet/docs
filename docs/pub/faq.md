@@ -10,6 +10,7 @@
   - [Backups](#backups)
   - [How do I get my seed phrase and static channel backups?](#how-do-i-get-my-seed-phrase-and-static-channel-backups)
   - [How do I migrate Pub to a new machine?](#how-do-i-migrate-pub-to-a-new-machine)
+  - [How do I reset admin access?](#how-do-i-reset-admin-access)
   - [Why can't I spend guest or total node sats from my admin wallet?](#why-cant-i-spend-guest-or-total-node-sats-from-my-admin-wallet)
 - [Transactions](#transactions)
   - [How do I send on-chain Bitcoin?](#how-do-i-send-on-chain-bitcoin)
@@ -74,6 +75,10 @@ Lightning "backups" are disaster recovery scenarios given the nature of channel 
 ### How do I migrate Pub to a new machine?
 
 Stop Pub and LND on the old host, copy `db.sqlite`, optional `admin.npub`, and `~/.lnd` to a new machine, then install Pub on the new host and restore those files before starting services. Full steps are in the [Migrate Pub](./migrate.md) guide.
+
+### How do I reset admin access?
+
+Delete `~/lightning_pub/admin.npub` and restart Pub to generate new enrollment files (`admin.connect` / `admin.enroll`). See [Reset admin](./admin-reset.md).
 
 ### Why can't I spend guest or total node sats from my admin wallet?
 
@@ -225,6 +230,8 @@ rm ~/lightning_pub/admin.npub
 sleep 1
 cat ~/lightning_pub/admin.connect
 ```
+
+For what these files mean and when to use each, see [Reset admin](./admin-reset.md).
 
 ### Common Issues
 

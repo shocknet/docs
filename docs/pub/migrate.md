@@ -18,7 +18,7 @@ Copy these paths from the **old** host to the **new** host (same locations on th
 | `~/lightning_pub/admin.npub` | Optional. Copy this if you want the **same** ShockWallet identity to remain the Pub administrator after migration. |
 | `~/.lnd/` | LND data directory (channel and wallet state). |
 
-If you skip `admin.npub`, you can still migrate the node; you will need to set up admin access again (see [Reset admin access](#reset-admin-access) below).
+If you skip `admin.npub`, you can still migrate the node; set up admin again with [Reset admin](./admin-reset.md).
 
 ## Migration procedure
 
@@ -30,23 +30,9 @@ If you skip `admin.npub`, you can still migrate the node; you will need to set u
 
 On the next start, the new host should assume the identity of the old one—the same node, channels, and Pub state—as long as the old instance stays stopped.
 
-## Reset admin access
-
-Deleting admin is separate from migration but often needed if you are handing off the machine or lost admin wallet access.
-
-To reset who is admin, delete `~/lightning_pub/admin.npub` while Pub is stopped (or follow your platform’s restart flow after deletion). Pub will create new enrollment material on restart:
-
-- **`admin.connect`** — Full `nprofile` string plus a one-time secret. Use this to connect a **new** wallet and promote that key to admin.
-- **`admin.enroll`** — Only the one-time secret. Paste it into the Pub dashboard to promote the **currently connected** user wallet to admin.
-
-Only **one** admin exists per Pub. Removing `admin.npub` removes admin from the wallet that held it; that user becomes a guest.
-
-For command-line examples (including viewing `admin.connect` after a reset), see [Troubleshooting → Installation Issues](./faq.md#installation-issues) in the FAQ.
-
-Changing admin does **not** move sats between Pub accounts or guest balances. See [Assets & liabilities](./assets-liabilities.md).
-
 ## Related reading
 
+- [Reset admin](./admin-reset.md) — new administrator after migration or lost access
 - [Assets & liabilities](./assets-liabilities.md) — admin wallet vs dashboard, root assets, fee wallet
 - [FAQ → Backups](./faq.md#backups) — seed phrase, `db.sqlite`, and disaster recovery context
 - [Configuration](./configuration.md) — environment variables after migration
