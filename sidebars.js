@@ -38,7 +38,14 @@ const sidebars = {
     'pub/start9',
     'pub/umbrel',
     'pub/watchdog',
-    'pub/faq',
+    {
+      type: 'category',
+      label: 'FAQ & guides',
+      items: [
+        {type: 'doc', id: 'pub/faq', label: 'FAQ'},
+        {type: 'doc', id: 'pub/migrate', label: 'Migrate Pub'},
+      ],
+    },
     ],
   video: [
     'video/intro',

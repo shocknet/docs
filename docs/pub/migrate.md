@@ -1,0 +1,51 @@
+# Migrate Pub
+
+Use this guide when you move Lightning.Pub to a new host—for example a different VPS, bare-metal server, VM, or a full rebuild on another machine. The steps are the same regardless of platform.
+
+## Before you copy anything
+
+1. **Stop Pub and LND on the old host** before copying files. Running both old and new copies at once can corrupt state or cause conflicting identity on the network.
+2. After services are running successfully on the **new** host, **do not start** Pub or LND on the old host again.
+3. **Keep the old host’s data** until the new host is healthy and you have verified channels, wallet access, and the dashboard. Treat the old machine as a backup until you are confident in the migration.
+
+## What to copy
+
+Copy these paths from the **old** host to the **new** host (same locations on the new machine):
+
+| Path | Purpose |
+|------|---------|
+| `~/lightning_pub/db.sqlite` | Pub database, including the encrypted seed and the wallet decryption password LND needs when the Pub installer provisioned LND. |
+| `~/lightning_pub/admin.npub` | Optional. Copy this if you want the **same** ShockWallet identity to remain the Pub administrator after migration. |
+| `~/.lnd/` | LND data directory (channel and wallet state). |
+
+If you skip `admin.npub`, you can still migrate the node; you will need to set up admin access again (see [Reset admin access](#reset-admin-access) below).
+
+## Migration procedure
+
+1. On the **new** host, run the [Pub installer](https://deploy.lightning.pub) so dependencies, directories, and services (systemd on Linux, launchd on macOS, etc.) are created.
+2. **Stop** Pub and LND on the new host (they will have fresh empty data from the install).
+3. Replace the new host’s `~/lightning_pub/db.sqlite` (and `admin.npub` if you copied it) with your copies from the old host.
+4. Replace the new host’s `~/.lnd` directory with your copy from the old host.
+5. **Start** Pub and LND on the new host.
+
+On the next start, the new host should assume the identity of the old one—the same node, channels, and Pub state—as long as the old instance stays stopped.
+
+## Reset admin access
+
+Deleting admin is separate from migration but often needed if you are handing off the machine or lost admin wallet access.
+
+To reset who is admin, delete `~/lightning_pub/admin.npub` while Pub is stopped (or follow your platform’s restart flow after deletion). Pub will create new enrollment material on restart:
+
+- **`admin.connect`** — Full `nprofile` string plus a one-time secret. Use this to connect a **new** wallet and promote that key to admin.
+- **`admin.enroll`** — Only the one-time secret. Paste it into the Pub dashboard to promote the **currently connected** user wallet to admin.
+
+Only **one** admin exists per Pub. Removing `admin.npub` removes admin from the wallet that held it; that user becomes a guest.
+
+For command-line examples (including viewing `admin.connect` after a reset), see [Troubleshooting → Installation Issues](./faq.md#installation-issues) in the FAQ.
+
+Changing admin does **not** move sats between Pub accounts or guest balances. More documentation on assets, liabilities, and account balances is coming later.
+
+## Related reading
+
+- [FAQ → Backups](./faq.md#backups) — seed phrase, `db.sqlite`, and disaster recovery context
+- [Configuration](./configuration.md) — environment variables after migration
