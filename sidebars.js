@@ -44,6 +44,7 @@ const sidebars = {
       items: [
         {type: 'doc', id: 'pub/faq', label: 'FAQ'},
         {type: 'doc', id: 'pub/migrate', label: 'Migrate Pub'},
+        {type: 'doc', id: 'pub/assets-liabilities', label: 'Assets & liabilities'},
       ],
     },
     ],

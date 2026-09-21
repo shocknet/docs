@@ -43,9 +43,10 @@ Only **one** admin exists per Pub. Removing `admin.npub` removes admin from the 
 
 For command-line examples (including viewing `admin.connect` after a reset), see [Troubleshooting → Installation Issues](./faq.md#installation-issues) in the FAQ.
 
-Changing admin does **not** move sats between Pub accounts or guest balances. More documentation on assets, liabilities, and account balances is coming later.
+Changing admin does **not** move sats between Pub accounts or guest balances. See [Assets & liabilities](./assets-liabilities.md).
 
 ## Related reading
 
+- [Assets & liabilities](./assets-liabilities.md) — admin wallet vs dashboard, root assets, fee wallet
 - [FAQ → Backups](./faq.md#backups) — seed phrase, `db.sqlite`, and disaster recovery context
 - [Configuration](./configuration.md) — environment variables after migration
